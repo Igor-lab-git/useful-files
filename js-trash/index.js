@@ -120,5 +120,87 @@ if(checkAge(getAge)) {
     console.log("Доступ закрыт!");
 }
 
+// тонкое отличие состоит в том
+// .Function Expression создаётся, когда выполнение доходит до него, и затем уже может использоваться.
+// После того, как поток выполнения достигнет правой части выражения присваивания 
+// let sum = function… – с этого момента, функция считается созданной и может быть использована.
 
+// С Function Declaration всё иначе.
+// Function Declaration может быть вызвана раньше, чем она объявлена.
+// Другими словами, когда движок JavaScript готовится выполнять скрипт или блок кода, прежде всего он ищет в нём Function Declaration
+//  и создаёт все такие функции. Можно считать этот процесс «стадией инициализации».
+
+//ARROW FUNCTION
+
+// const ask = (question, yes, no) => {
+//   return confirm(question) ? yes() : no();
+// }
+
+// ask("Вы согласились?", () => {alert("Вы согласились.")}, () => {alert("Вы отменили выполнение.")});
+
+const user = {
+  name: "Igor",
+  age: 36,
+  isActive: true
+}
+
+for (let property in user) {
+  console.log(property);
+}
+
+const  local = "city"
+user[local] = "Los Angeles"
+
+console.log(user);
+
+console.log("name" in user) ;
+
+
+
+let schedule = {
+  name: "Igor"
+};
+
+const isEmpty = (obj, property) => {
+  return property in obj;
+}
+
+console.log(isEmpty(schedule, "name"));
+
+
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130
+}
+
+const sumSalaries = (obj) => {
+  let sum = null;
+  for(let prop in obj) {
+    sum += obj[prop]
+  }
+  return sum;
+
+}
+
+console.log(sumSalaries(salaries));
+
+
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+};
+
+const multiplyNumeric = (obj) => {
+  for(let prop in obj) {
+    if(typeof obj[prop] == "number") {
+      obj[prop] *= 2;
+      
+    }
+  }
+  return obj;
+}
+
+console.log(multiplyNumeric(menu));
 
