@@ -71,54 +71,54 @@
 //         break;
 // }
 
-let oldUser = 100;
-switch (true) {
-  case oldUser < 18:
-    console.log("Нет доступа");
-    break;
-  case oldUser >= 18 && oldUser < 30:
-    console.log("Привет");
-    break;
-  case oldUser >= 30 && oldUser < 50:
-    console.log("Добро пожаловать");
-    break;
-  default:
-    console.log("Досвидание");
-    break;
-}
+// let oldUser = 100;
+// switch (true) {
+//   case oldUser < 18:
+//     console.log("Нет доступа");
+//     break;
+//   case oldUser >= 18 && oldUser < 30:
+//     console.log("Привет");
+//     break;
+//   case oldUser >= 30 && oldUser < 50:
+//     console.log("Добро пожаловать");
+//     break;
+//   default:
+//     console.log("Досвидание");
+//     break;
+// }
 
-const vv = "Igor";
+// const vv = "Igor";
 
-for (let index = 0; index < vv.length; index++) {
-    console.log(vv[index]);
-}
+// for (let index = 0; index < vv.length; index++) {
+//     console.log(vv[index]);
+// }
 
-console.log(vv);
+// console.log(vv);
 
-const fun = (a, b) => {
-    return a + b;
-}
+// const fun = (a, b) => {
+//     return a + b;
+// }
 
-console.log(fun(10, 5));
+// console.log(fun(10, 5));
 
 
 //FUNCTION
 
-function checkAge(age) {
-    if(age >= 18) {
-        return true;
-    } else {
-        return false;
-    }
-}
+// function checkAge(age) {
+//     if(age >= 18) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
 
-const getAge = 10;
+// const getAge = 10;
 
-if(checkAge(getAge)) {
-    console.log("Доступ получен!");
-} else {
-    console.log("Доступ закрыт!");
-}
+// if(checkAge(getAge)) {
+//     console.log("Доступ получен!");
+// } else {
+//     console.log("Доступ закрыт!");
+// }
 
 // тонкое отличие состоит в том
 // .Function Expression создаётся, когда выполнение доходит до него, и затем уже может использоваться.
@@ -138,69 +138,197 @@ if(checkAge(getAge)) {
 
 // ask("Вы согласились?", () => {alert("Вы согласились.")}, () => {alert("Вы отменили выполнение.")});
 
+// все локальные области видимости и их переменные объявленнные в в локальной области после вызова фукции уничтожаются
+
+// const user = {
+//   name: "Igor",
+//   age: 36,
+//   isActive: true
+// }
+
+// for (let property in user) {
+//   console.log(property);
+// }
+
+// const  local = "city"
+// user[local] = "Los Angeles"
+
+// console.log(user);
+
+// console.log("name" in user) ;
+
+
+
+// let schedule = {
+//   name: "Igor"
+// };
+
+// const isEmpty = (obj, property) => {
+//   return property in obj;
+// }
+
+// console.log(isEmpty(schedule, "name"));
+
+
+// let salaries = {
+//   John: 100,
+//   Ann: 160,
+//   Pete: 130
+// }
+
+// const sumSalaries = (obj) => {
+//   let sum = null;
+//   for(let prop in obj) {
+//     sum += obj[prop]
+//   }
+//   return sum;
+
+// }
+
+// console.log(sumSalaries(salaries));
+
+//OBJECT
+// Сравнение по ссылке
+// Два объекта равны только в том случае, если это один и тот же объект. скопированн объект от щбъекта т у них свои ссылки к этому объекту
+
+
+
+// let menu = {
+//   width: 200,
+//   height: 300,
+//   title: "My menu"
+// };
+
+// const multiplyNumeric = (obj) => {
+//   for(let prop in obj) {
+//     if(typeof obj[prop] == "number") {
+//       obj[prop] *= 2;
+      
+//     }
+//   }
+//   return obj;
+// }
+
+// console.log(multiplyNumeric(menu));
+
+
+
+// const countOfA = 10;
+
+// const myFunc = () => {
+//   const myInnerFunc = () => {
+//     let countOfB = 5;
+//     return countOfA * countOfB;
+//   }
+//   return myInnerFunc();
+// }
+
+// console.log(myFunc());
+
+
+
+// let objTarget = {
+//   name: "Igor",
+//   age: 36,
+//   size: {
+//     width: 180,
+//     heigt: 80
+//   },
+//   sayHi() {
+//     console.log(`Hi ${this.name}`);
+    
+//   }
+// }
+
+// let cloneObjTarget = Object.assign({}, objTarget);
+// console.log(cloneObjTarget);
+
+//Если скопированное имя свойства уже существует, оно будет перезаписано:
+//вложенные объекты тоже копируются по ссылке
+
+// let newObjTarget = {};
+// for(let key in objTarget) {
+//   newObjTarget[key] = objTarget[key]
+// }
+
+// console.log(newObjTarget);
+
+// console.log(objTarget.sayHi());
+
+
+// function newFun(arr) {
+
+//   return this.arr;
+// }
+// console.log(newFun("Igor"));
+
+
+// function makeUser() {
+//   return {
+//     name: "John",
+//     ref: this
+//   };
+// }
+
+// let user = makeUser();
+
+// console.log(user.ref.name );
+
+// const calculator = {
+//   a: null,
+//   b: null,
+//  setValues(x, y) {
+//     this.a = x
+//     this.b = y
+//   },
+//   sum() {
+//     return this.a + this.b
+//   }
+// }
+
+
+// calculator.setValues(5, 10);
+// console.log(calculator.sum());
+
+// let user = {
+//   name: null,
+//   age: null,
+//   setName(name) {
+//     this.name = name;
+//     return this
+//   },
+//   setAge(age) {
+//     this.age = age;
+//     return this
+//   },
+
+//   printUser() {
+//     return `I ${this.name}, and me ${this.age}`
+//   }
+// }
+
+// console.log(user.setName("Igor").setAge(36).printUser());
+
+// class Animal {
+//   constructor(name, say) {
+//     this.name = name;
+//     this.say = say;
+//   }
+//   speak() {
+//     return `This ${this.name}, ${this.say} `
+//   }
+// }
+
+// const dog = new Animal("Spike", "gav, gav");
+// console.log(dog.speak());
+
 const user = {
   name: "Igor",
   age: 36,
-  isActive: true
 }
 
-for (let property in user) {
-  console.log(property);
-}
-
-const  local = "city"
-user[local] = "Los Angeles"
-
-console.log(user);
-
-console.log("name" in user) ;
+console.log(user.toString());
 
 
 
-let schedule = {
-  name: "Igor"
-};
-
-const isEmpty = (obj, property) => {
-  return property in obj;
-}
-
-console.log(isEmpty(schedule, "name"));
-
-
-let salaries = {
-  John: 100,
-  Ann: 160,
-  Pete: 130
-}
-
-const sumSalaries = (obj) => {
-  let sum = null;
-  for(let prop in obj) {
-    sum += obj[prop]
-  }
-  return sum;
-
-}
-
-console.log(sumSalaries(salaries));
-
-
-let menu = {
-  width: 200,
-  height: 300,
-  title: "My menu"
-};
-
-const multiplyNumeric = (obj) => {
-  for(let prop in obj) {
-    if(typeof obj[prop] == "number") {
-      obj[prop] *= 2;
-      
-    }
-  }
-  return obj;
-}
-
-console.log(multiplyNumeric(menu));
 
