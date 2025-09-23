@@ -331,4 +331,30 @@ console.log(user.toString());
 
 
 
+setTimeout(() => console.log("Hi Igor"), 2000);
+setTimeout(console.log("Сейчас сразу!"), 2000);
+
+const errorFunc = () => {
+  throw new Error("Some Error");
+}
+
+try {
+  errorFunc();
+} catch (error) {
+  console.log(error.message);
+}
+
+console.log("Continue");
+
+
+const list = "Goust";
+console.log(list.indexOf("S"));
+let newstr = list[0].toLowerCase() + list[1] + list[2] + list[3] + list[4]
+console.log(newstr);
+
+console.log(list[0] = I);
+// console.log(list.at(-1));
+for(let char of list) {
+  setTimeout(() => console.log(char), 1000 )
+}
 
