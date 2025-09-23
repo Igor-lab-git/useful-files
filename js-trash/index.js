@@ -346,7 +346,37 @@ try {
 
 console.log("Continue");
 
+const obj1 = {
+  name: "Igor",
+  age: 36
+}
 
+const obj2 = {
+  name: "Igor",
+  age: 36
+}
+
+const areObjectsequal = (obj1, obj2) => {
+  const keys1 = Object.keys(obj1);
+  const keys2 = Object.keys(obj2);
+
+  if(keys1.length !== keys2.length) {
+    return false;
+  }
+
+  for(let key in obj1) {
+    if(obj1[key] !== obj2[key]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+console.log(areObjectsequal(obj1, obj2));
+
+
+//STRING
 const list = "Goust";
 console.log(list.indexOf("S"));
 let newstr = list[0].toLowerCase() + list[1] + list[2] + list[3] + list[4]
@@ -357,4 +387,79 @@ console.log(list[0] = I);
 for(let char of list) {
   setTimeout(() => console.log(char), 1000 )
 }
+
+let sizeStr = "JavaScript  ";
+const subStr = sizeStr.trim().slice(4);
+const subStr2 = sizeStr.substring(3);
+const subStr3 = sizeStr.substr(2, 3);
+console.log(subStr);
+console.log(subStr2);
+console.log(subStr3);
+
+let codeStr = "";
+for(let i = 200; i <= 250; i++) {
+  codeStr += String.fromCharCode(i);
+}
+
+console.log(codeStr);
+
+let repeatStr = " Igor ";
+console.log(repeatStr.trim().repeat(3));
+console.log(repeatStr.trim().replace("Igor", "Hi-Igor"));
+
+//ВЕРНУТЬ СТРОКУ С ПЕРВОЙ ЗАГЛАВНОЙ БУКВОЙ
+
+const ucFirst = (str) => {
+  let strupperCase = "";
+  str.trim();
+  if(!str == "" && typeof str === "string") {
+    return strupperCase = str[0].toUpperCase() + str.slice(1);
+  }
+  return 
+}
+
+console.log(ucFirst("вася"));
+
+//функцию checkSpam(str), возвращающую true, если str содержит 'viagra' или 'XXX', а иначе false.
+
+const checkSpam = (str, sub1, sub2) => {
+
+  if(str.toUpperCase().includes(sub1.toUpperCase()) || str.toUpperCase().includes(sub2.toUpperCase())) {
+    return true;
+  } else {
+    return false
+  }
+}
+
+console.log(checkSpam('buy ViAgRA now', 'viagra', 'XXX'));
+
+
+// Создайте функцию truncate(str, maxlength), которая проверяет длину строки str и, если она превосходит maxlength,
+//  заменяет конец str на "…", так, чтобы её длина стала равна maxlength.
+// Результатом функции должна быть та же строка, если усечение не требуется, либо, если необходимо, усечённая строка.
+
+const truncate = (str, lengthStr) => {
+  let sliceStr = "";
+  if(str.length > lengthStr) {
+    return sliceStr = str.slice(0, lengthStr - 1) + "...";
+  } else {
+    return str;
+  }
+}
+
+console.log(truncate("Вот, что мне хотелось бы сказать на эту тему:", 20) );
+
+// Есть стоимость в виде строки "$120". То есть сначала идёт знак валюты, а затем – число.
+// Создайте функцию extractCurrencyValue(str), которая будет из такой строки выделять числовое значение
+//  и возвращать его.
+
+const extractCurrencyValue = (str) => {
+  let int = null;
+  if(str.trim()[0] !== "string") {
+    return int = Number(str.slice(1));
+  } else {
+    return
+  }
+}
+console.log(extractCurrencyValue('$120'));
 
