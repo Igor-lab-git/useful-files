@@ -322,144 +322,211 @@
 // const dog = new Animal("Spike", "gav, gav");
 // console.log(dog.speak());
 
-const user = {
-  name: "Igor",
-  age: 36,
-}
+// const user = {
+//   name: "Igor",
+//   age: 36,
+// }
 
-console.log(user.toString());
-
-
-
-setTimeout(() => console.log("Hi Igor"), 2000);
-setTimeout(console.log("Сейчас сразу!"), 2000);
-
-const errorFunc = () => {
-  throw new Error("Some Error");
-}
-
-try {
-  errorFunc();
-} catch (error) {
-  console.log(error.message);
-}
-
-console.log("Continue");
-
-const obj1 = {
-  name: "Igor",
-  age: 36
-}
-
-const obj2 = {
-  name: "Igor",
-  age: 36
-}
-
-const areObjectsequal = (obj1, obj2) => {
-  const keys1 = Object.keys(obj1);
-  const keys2 = Object.keys(obj2);
-
-  if(keys1.length !== keys2.length) {
-    return false;
-  }
-
-  for(let key in obj1) {
-    if(obj1[key] !== obj2[key]) {
-      return false;
-    }
-  }
-
-  return true;
-}
-
-console.log(areObjectsequal(obj1, obj2));
+// console.log(user.toString());
 
 
-//STRING
-const list = "Goust";
-console.log(list.indexOf("S"));
-let newstr = list[0].toLowerCase() + list[1] + list[2] + list[3] + list[4]
-console.log(newstr);
 
-console.log(list[0] = I);
-// console.log(list.at(-1));
-for(let char of list) {
-  setTimeout(() => console.log(char), 1000 )
-}
+// setTimeout(() => console.log("Hi Igor"), 2000);
+// setTimeout(console.log("Сейчас сразу!"), 2000);
 
-let sizeStr = "JavaScript  ";
-const subStr = sizeStr.trim().slice(4);
-const subStr2 = sizeStr.substring(3);
-const subStr3 = sizeStr.substr(2, 3);
-console.log(subStr);
-console.log(subStr2);
-console.log(subStr3);
+// const errorFunc = () => {
+//   throw new Error("Some Error");
+// }
 
-let codeStr = "";
-for(let i = 200; i <= 250; i++) {
-  codeStr += String.fromCharCode(i);
-}
+// try {
+//   errorFunc();
+// } catch (error) {
+//   console.log(error.message);
+// }
 
-console.log(codeStr);
+// console.log("Continue");
 
-let repeatStr = " Igor ";
-console.log(repeatStr.trim().repeat(3));
-console.log(repeatStr.trim().replace("Igor", "Hi-Igor"));
+// const obj1 = {
+//   name: "Igor",
+//   age: 36
+// }
 
-//ВЕРНУТЬ СТРОКУ С ПЕРВОЙ ЗАГЛАВНОЙ БУКВОЙ
+// const obj2 = {
+//   name: "Igor",
+//   age: 36
+// }
 
-const ucFirst = (str) => {
-  let strupperCase = "";
-  str.trim();
-  if(!str == "" && typeof str === "string") {
-    return strupperCase = str[0].toUpperCase() + str.slice(1);
-  }
-  return 
-}
+// const areObjectsequal = (obj1, obj2) => {
+//   const keys1 = Object.keys(obj1);
+//   const keys2 = Object.keys(obj2);
 
-console.log(ucFirst("вася"));
+//   if(keys1.length !== keys2.length) {
+//     return false;
+//   }
 
-//функцию checkSpam(str), возвращающую true, если str содержит 'viagra' или 'XXX', а иначе false.
+//   for(let key in obj1) {
+//     if(obj1[key] !== obj2[key]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+// console.log(areObjectsequal(obj1, obj2));
 
-const checkSpam = (str, sub1, sub2) => {
+// const userInfo = {
+//   name: "John",
+//   age: 20,
+//   address: {
+//     country: "USA",
+//     city: "Los Angeles"
+//   }
+// }
 
-  if(str.toUpperCase().includes(sub1.toUpperCase()) || str.toUpperCase().includes(sub2.toUpperCase())) {
-    return true;
-  } else {
-    return false
-  }
-}
-
-console.log(checkSpam('buy ViAgRA now', 'viagra', 'XXX'));
+// console.log(userInfo.address?.city);
 
 
-// Создайте функцию truncate(str, maxlength), которая проверяет длину строки str и, если она превосходит maxlength,
-//  заменяет конец str на "…", так, чтобы её длина стала равна maxlength.
-// Результатом функции должна быть та же строка, если усечение не требуется, либо, если необходимо, усечённая строка.
 
-const truncate = (str, lengthStr) => {
-  let sliceStr = "";
-  if(str.length > lengthStr) {
-    return sliceStr = str.slice(0, lengthStr - 1) + "...";
-  } else {
-    return str;
-  }
-}
+// //STRING
+// const list = "Goust";
+// console.log(list.indexOf("S"));
+// let newstr = list[0].toLowerCase() + list[1] + list[2] + list[3] + list[4]
+// console.log(newstr);
 
-console.log(truncate("Вот, что мне хотелось бы сказать на эту тему:", 20) );
+// console.log(list[0] = I);
+// // console.log(list.at(-1));
+// for(let char of list) {
+//   setTimeout(() => console.log(char), 1000 )
+// }
 
-// Есть стоимость в виде строки "$120". То есть сначала идёт знак валюты, а затем – число.
-// Создайте функцию extractCurrencyValue(str), которая будет из такой строки выделять числовое значение
-//  и возвращать его.
+// let sizeStr = "JavaScript  ";
+// const subStr = sizeStr.trim().slice(4);
+// const subStr2 = sizeStr.substring(3);
+// const subStr3 = sizeStr.substr(2, 3);
+// console.log(subStr);
+// console.log(subStr2);
+// console.log(subStr3);
 
-const extractCurrencyValue = (str) => {
-  let int = null;
-  if(str.trim()[0] !== "string") {
-    return int = Number(str.slice(1));
-  } else {
-    return
-  }
-}
-console.log(extractCurrencyValue('$120'));
+// let codeStr = "";
+// for(let i = 200; i <= 250; i++) {
+//   codeStr += String.fromCharCode(i);
+// }
+
+// console.log(codeStr);
+
+// let repeatStr = " Igor ";
+// console.log(repeatStr.trim().repeat(3));
+// console.log(repeatStr.trim().replace("Igor", "Hi-Igor"));
+
+// //ВЕРНУТЬ СТРОКУ С ПЕРВОЙ ЗАГЛАВНОЙ БУКВОЙ
+
+// const ucFirst = (str) => {
+//   let strupperCase = "";
+//   str.trim();
+//   if(!str == "" && typeof str === "string") {
+//     return strupperCase = str[0].toUpperCase() + str.slice(1);
+//   }
+//   return 
+// }
+
+// console.log(ucFirst("вася"));
+
+// //функцию checkSpam(str), возвращающую true, если str содержит 'viagra' или 'XXX', а иначе false.
+
+// const checkSpam = (str, sub1, sub2) => {
+
+//   if(str.toUpperCase().includes(sub1.toUpperCase()) || str.toUpperCase().includes(sub2.toUpperCase())) {
+//     return true;
+//   } else {
+//     return false
+//   }
+// }
+
+// console.log(checkSpam('buy ViAgRA now', 'viagra', 'XXX'));
+
+
+// // Создайте функцию truncate(str, maxlength), которая проверяет длину строки str и, если она превосходит maxlength,
+// //  заменяет конец str на "…", так, чтобы её длина стала равна maxlength.
+// // Результатом функции должна быть та же строка, если усечение не требуется, либо, если необходимо, усечённая строка.
+
+// const truncate = (str, lengthStr) => {
+//   let sliceStr = "";
+//   if(str.length > lengthStr) {
+//     return sliceStr = str.slice(0, lengthStr - 1) + "...";
+//   } else {
+//     return str;
+//   }
+// }
+
+// console.log(truncate("Вот, что мне хотелось бы сказать на эту тему:", 20) );
+
+// // Есть стоимость в виде строки "$120". То есть сначала идёт знак валюты, а затем – число.
+// // Создайте функцию extractCurrencyValue(str), которая будет из такой строки выделять числовое значение
+// //  и возвращать его.
+
+// const extractCurrencyValue = (str) => {
+//   let int = null;
+//   if(str.trim()[0] !== "string") {
+//     return int = Number(str.slice(1));
+//   } else {
+//     return
+//   }
+// }
+// console.log(extractCurrencyValue('$120'));
+
+
+
+// const myString = "Hi Igor";
+// console.log(myString.includes("Igor"));
+// console.log(myString.indexOf("Igor"));
+
+
+// //ARRAY
+
+// let fruits = ["Apple", "Orange", "Plum"];
+// console.log(fruits.at(-1));
+// console.log(fruits.pop());
+// console.log(fruits.push("Груша"));
+// console.log(fruits.push("Ананас", "Лимон"));
+// console.log(fruits);
+// console.log(fruits.toString());
+
+// for (let fruit of fruits) {
+//   const iteratArr = fruit
+//   console.log(iteratArr);
+// }
+
+
+// const styles = ["Джаз", "Блюз"];
+// console.log(styles.push("Рок-н-ролл"));
+// const deletItem = styles.shift()
+// console.log(deletItem);
+// console.log(styles.unshift("Рэп", "Регги"));
+// console.log(styles);
+// styles[Math.floor((styles.length - 1) / 2)] = "Классика"
+// console.log(styles);
+
+
+// const sumInput = () => {
+//   let arr = [];
+//   while(true) {
+//     let inputNum = prompt("Введидите число", 0);
+//     if(inputNum === null || inputNum === "" || !isFinite(inputNum)) {
+//       break;
+//     } else {
+//       arr.push(+inputNum)
+//     }
+//   }
+// let sumNum = null;
+//   for(let num of arr) {
+//      sumNum += num;
+//   }
+//   return alert(sumNum)
+// }
+// sumInput()
+
+
+console.log(getMaxSubSum([-1, 2, 3, -9]));
+
+
+
 
