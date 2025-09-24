@@ -525,8 +525,82 @@
 // sumInput()
 
 
-console.log(getMaxSubSum([-1, 2, 3, -9]));
+let obj = { name: "John", age: 30 };
+for(let key in obj) {
+  console.log(typeof obj[key]);
+}
 
 
+let arr = [10, "20", 30];
+for(let i = 0; i < arr.length; i++) {
+  console.log(typeof arr[i]);
+}
+
+let arr2 = [10, "20", 30, 50];
+for(let i = arr2.length - 1; i >= 0; i--) {
+  console.log(arr2[i]);
+}
+
+let arr3 = ["Я", "изучаю", "JavaScript", "Igor", "Array"];
+arr3.splice(3, 0, "Уже", "Year");
+arr3.splice(3, 2);
+arr3.splice(-1, 0, "Hi", "I am here");
+console.log(arr3);
+
+let arr4 = [1, 2, 3, 4, 5, 6, 7];
+let resArr4 = arr4.slice(0, 4)
+let reversArr4 =  arr4.slice(-3)
+console.log(resArr4);
+console.log(reversArr4);
+console.log(arr4.slice());
+
+let arrNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let arr5 = [1, 2, 3, 4, 5];
+let resArr5 = arr5.concat(arrNum.slice(-5));
+console.log(resArr5);
+
+let arr6  = ["Бильбо", "Гэндальф", "Назгул"];
+arr6.forEach((item, index, array) => {
+  console.log(`
+    Персонаж ${item} под номером ${index} в списке "${array}"
+    `);
+})
+
+let arr7 = ["Хлеб", "Молоко", "Шоколад", "Пиво"];
+console.log(arr7.indexOf("Пиво"));
+console.log(arr7.includes("Шоколад"));
 
 
+let users = [
+  {id: 1, name: "Вася", age: 25},
+  {id: 2, name: "Петя", age: 20},
+  {id: 3, name: "Маша", age: 29}
+];
+let findUser = users.find((item) => item.id == 1);
+console.log(findUser);
+let findindexUser = users.findIndex(i => i.name == "Маша");
+console.log(findindexUser);
+let filterUser = users.filter(i => i.age >= 25);
+console.log(filterUser);
+
+let arr8 = [1, 2, 3, 4, 5];
+let resArr8 = arr8.map(i => String(i));
+console.log(resArr8);
+
+let arr9 = [13, 8, 2, 16, 33, 7];
+let resArr9 = arr9.sort((a, b) => a - b);
+console.log(arr9);
+
+let arr10 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+arr10.reverse();
+console.log(arr10);
+console.log(arr10.join());
+
+
+let names = 'Вася, Петя, Маша';
+let arrNames = names.split(",");
+for(let i = 0; i < arrNames.length; i++) {
+  console.log(`
+    Сообщнение получат ${arrNames[i]}
+    `);
+}
