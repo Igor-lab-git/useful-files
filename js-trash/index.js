@@ -701,9 +701,7 @@ let usersIDGroup = [
   
 
   const fgf = [{name: "Igor", age: 25}, {name: "John", age: 18}, {name: "Alice", age: 29}, {name: "Peter", age: 17}, ]
-
   console.log(fgf.filter(el => el.age > 20));
-
   console.log((fgf.reduce((ac, el) => ac + el.age, 0) / fgf.length));
   
 
@@ -712,4 +710,51 @@ const fgvv = {id: 1, name: "Igor", age: 25, isActive: true}
   console.log(Object.keys(fgvv));
   console.log(Object.values(fgvv));
   console.log(Object.entries(fgvv));
+
+  const vbvgf = Object.entries(fgvv);
+
+  //Деструктуризация
+
+  let arr14 = ["Ilya", "Kantor"];
+  const [firstName, surName] = arr14;
+  console.log(firstName, surName);
   
+let options = {
+  title: "Menu",
+  width: 100,
+  height: 200
+};
+
+const { title, width, height } = options;
+console.log(title, width, height );
+
+let user = { name: "John", years: 30 };
+const { name, years, isAdmin : isAdmin  =false} = user;
+console.log( name, years, isAdmin );
+
+let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+};
+
+const topSalary = (salaries) => {
+  let maxSum = 0;
+  let maxName = null;
+
+  for(const [name, salary] of Object.entries(salaries)) {
+    if(maxSum < salary) {
+      maxSum = salary;
+      maxName = name
+    }
+  }
+  return maxName;
+}
+
+console.log(topSalary(salaries));
+
+
+//Дата и время
+
+const now = new Date();
+console.log(now.getTimezoneOffset());
