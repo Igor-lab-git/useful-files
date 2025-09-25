@@ -604,3 +604,112 @@ for(let i = 0; i < arrNames.length; i++) {
     Сообщнение получат ${arrNames[i]}
     `);
 }
+
+let arr11 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+const sumArr11 = arr11.reduce((ac, el) => ac + el, 0);
+console.log(sumArr11);
+console.log(Array.isArray(arr11));
+
+const camelize = (str) => {
+    const resultStr = str.split("-").map((word, index) => index === 0 ? word : word[0].toUpperCase() + word.slice(1)).join("");
+    return resultStr;
+}
+console.log(camelize("background-color"));
+console.log(camelize("list-style-image"));
+console.log(camelize("-webkit-transition"));
+
+
+const filterRange = (array, a, b) => {
+    const filtredArray = array.filter(num => num >= a && num <= b);
+    return filtredArray;
+}
+console.log(filterRange([5, 3, 8, 1], 1, 4));
+
+
+const filterRangeInPlace = (array, a, b) => {
+    return array.filter(num => num >= a && num <= b);
+}
+console.log(filterRangeInPlace([5, 3, 8, 1], 1, 4));
+
+
+let arr12 = [5, 2, 1, -10, 8];
+console.log(arr12.sort((a, b) => b - a));
+
+const copySorted = (array) => {
+    const sorted = array.slice().sort();
+    return sorted
+}
+
+console.log(copySorted(["HTML", "JavaScript", "CSS"]));
+
+let usersArray = [ { name: "Вася", surname: "Пупкин", id: 1 }, { name: "Петя", surname: "Иванов", id: 2 },
+    { name: "Маша", surname: "Петрова", id: 3 }];
+
+const arrayFullNames = usersArray.map((user) => {
+    return {fullName: `${user.name} ${user.surname}`, id: user.id}
+})
+
+console.log(arrayFullNames);
+
+
+const arrUserAge = [{ name: "Вася", age: 25 }, { name: "Петя", age: 30 }, { name: "Маша", age: 28 }];
+const  sortByAge = (array) => {
+    const sortUsers = array.sort((a, b) => a.age - b.age);
+    return sortUsers;
+}
+
+console.log(sortByAge(arrUserAge));
+
+
+let arr13 = [1, 2, 3];
+const shuffle = (array) => {
+   return  array.sort(() => Math.random() - 0.5)
+}
+
+console.log(shuffle(arr13));
+
+const arrayUsersMiddleAge = [{ name: "Вася", age: 25 }, { name: "Петя", age: 30 }, { name: "Маша", age: 29 }];
+const getAverageAge = (array) => {
+    const middleAge = array.reduce((ac, item) => ac + item.age, 0) / array.length;
+    return middleAge;
+}
+
+console.log(getAverageAge(arrayUsersMiddleAge));
+
+
+let strings = ["кришна", "кришна", "харе", "харе", "харе", "харе", "кришна", "кришна", ":-O"];
+  const unique = (array) => {
+    const uniqueWords = [];
+
+    array.forEach(word => !uniqueWords.includes(word) ? uniqueWords.push(word) : "");
+    return uniqueWords;
+  }
+console.log(unique(strings));
+
+let usersIDGroup = [
+    {id: 'john', name: "John Smith", age: 20},
+    {id: 'ann', name: "Ann Smith", age: 24},
+    {id: 'pete', name: "Pete Peterson", age: 31},
+  ];
+
+  const groupById = (array) => {
+    const usersById = array.reduce((object, el) => {object[el.id] = el; return object}, {});
+    return usersById;
+  }
+
+  console.log(groupById(usersIDGroup));
+  
+
+  const fgf = [{name: "Igor", age: 25}, {name: "John", age: 18}, {name: "Alice", age: 29}, {name: "Peter", age: 17}, ]
+
+  console.log(fgf.filter(el => el.age > 20));
+
+  console.log((fgf.reduce((ac, el) => ac + el.age, 0) / fgf.length));
+  
+
+const fgvv = {id: 1, name: "Igor", age: 25, isActive: true}
+
+  console.log(Object.keys(fgvv));
+  console.log(Object.values(fgvv));
+  console.log(Object.entries(fgvv));
+  
