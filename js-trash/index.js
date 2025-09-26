@@ -702,6 +702,7 @@ let usersIDGroup = [
 
   const fgf = [{name: "Igor", age: 25}, {name: "John", age: 18}, {name: "Alice", age: 29}, {name: "Peter", age: 17}, ]
   console.log(fgf.filter(el => el.age > 20));
+  console.log(fgf.filter(el => el.age > 20));
   console.log((fgf.reduce((ac, el) => ac + el.age, 0) / fgf.length));
   
 
@@ -758,3 +759,33 @@ console.log(topSalary(salaries));
 
 const now = new Date();
 console.log(now.getTimezoneOffset());
+
+
+let student = {
+  name: 'John',
+  age: 30,
+  isAdmin: false,
+  courses: ['html', 'css', 'js'],
+  wife: null
+};
+
+const jsonStudent = JSON.stringify(student);
+console.log(jsonStudent);
+let str = '{"title":"Conference","date":"2017-11-30T12:00:00.000Z"}';
+console.log(JSON.parse(str));
+
+
+function f(...arguments) {
+  const arr = Array.from(arguments);
+ return arr.reduce((acc, el) => acc + el);
+}
+console.log(f(1, 2, 3, 4, 5));
+function fgg() {
+  var ggg = 10;
+}
+console.log(ggg);
+
+if(true) {
+  var ggg = 10;
+}
+console.log(ggg);
