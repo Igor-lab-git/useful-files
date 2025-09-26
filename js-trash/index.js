@@ -780,12 +780,3 @@ function f(...arguments) {
  return arr.reduce((acc, el) => acc + el);
 }
 console.log(f(1, 2, 3, 4, 5));
-function fgg() {
-  var ggg = 10;
-}
-console.log(ggg);
-
-if(true) {
-  var ggg = 10;
-}
-console.log(ggg);
