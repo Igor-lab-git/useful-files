@@ -774,9 +774,119 @@ console.log(jsonStudent);
 let str = '{"title":"Conference","date":"2017-11-30T12:00:00.000Z"}';
 console.log(JSON.parse(str));
 
+//SETTIMEOUT
 
-function f(...arguments) {
-  const arr = Array.from(arguments);
- return arr.reduce((acc, el) => acc + el);
+let timeId = setInterval(() => console.log("Igor"), 1000);
+
+setTimeout(() => clearInterval(timeId), 5000)
+
+const printNumbers = (from, to) => {
+  let currentNum = from;
+
+  let timeId = setInterval(() => {
+    console.log(currentNum);
+    if(currentNum == to) {
+      clearInterval(timeId)
+    } else {
+      currentNum++;
+    }
+  }, 1000)
 }
-console.log(f(1, 2, 3, 4, 5));
+
+console.log(printNumbers(1, 5));
+
+
+const logMessage = (name, age) => {
+  console.log(`Hi my name is ${name} and me ${age} old year`);
+}
+
+setTimeout(logMessage, 1500, "Igor", 36)
+
+//Флаги и дескрипторы свойств
+
+let userConfig = {
+  name: "Igor"
+};
+
+Object.defineProperty(userConfig, "name", {
+  writable: false
+});
+console.log(userConfig.name = "John");
+
+let description = Object.getOwnPropertyDescriptors(userConfig, "name");
+console.log(description);
+
+// геттеры и сеттеры javascript КОНСТРУКТОРЫ
+
+const userPer = {
+  name: "John", 
+  surName: "Smit",
+  get fullName() {
+    return `${this.name} ${this.surName}`
+  },
+  set fullName(value) {
+    [this.name, this.surName] = value.split(" ")
+  }
+}
+
+userPer.fullName = "Peter Karter"
+console.log(userPer.name);
+console.log(userPer.surName);
+
+const product = {
+  id:1,
+  price: 200000,
+  getPrice() {
+    return this.price
+  },
+  set title(value) {
+    return value
+  },
+
+  get title () {
+    return "My mackbook " + this.price + " $"
+  }
+}
+console.log(product.title = "Honor");
+
+
+class Student {
+  constructor(name, age) {
+    this.name = name,
+    this.age = age
+  }
+
+  set city(value) {
+    const [firstLatter, secondLatter] = value.split(" ");
+    const modifiedFirstLatter = firstLatter[0].toUpperCase() + firstLatter.slice(1).toLowerCase();
+    const modifiedSecondLatter = secondLatter[0].toUpperCase() + secondLatter.slice(1).toLowerCase();
+    this._city = [modifiedFirstLatter, modifiedSecondLatter].join(" ");
+  }
+
+  get  city() {
+    return `My City is ${this._city}`;
+  }
+}
+
+const firstStudent = new Student("Peter", 25);
+const secondStudent = new Student("John", 23);
+
+firstStudent.city = "los angeles";
+console.log(firstStudent.city);
+
+
+//PROTO
+
+let geom = {
+  name: "Figure",
+  sp:  {x: 0, y: 0},
+  ep: {x: 100, y: 20}
+}
+
+let rect = {
+  draw() {
+    console.log("Рисовать прямоугольник " + this.sp.x+","+this.sp.y)
+  }
+}
+rect.__proto__ = geom;
+console.log(rect.draw());
