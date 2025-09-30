@@ -890,3 +890,83 @@ let rect = {
 }
 rect.__proto__ = geom;
 console.log(rect.draw());
+
+
+const userProfile = {
+  name: "Igor",
+  commentsQty: 25,
+  age: 0,
+  hasSignetAgreement: true
+}
+// for(let key in userProfile) {
+//   console.log(userProfile[key]);
+// }
+
+Object.keys(userProfile).forEach(key => console.log(key, userProfile[key]));
+Object.values(userProfile).forEach(value => console.log(value));
+Object.entries(userProfile).forEach(([key, value]) => console.log(key, value));
+
+const animal = {
+  eats: true,
+  walk() {
+    return "Animal is walking";
+  }
+}
+
+const rabbit = {
+  jumps: true,
+}
+
+const longEar = {
+  longEar: 10,
+}
+
+Object.setPrototypeOf(rabbit, animal);
+Object.setPrototypeOf(longEar, rabbit)
+
+console.log(rabbit.eats);
+console.log(longEar.walk());
+console.log(rabbit.walk());
+console.log(Object.getPrototypeOf(rabbit));
+console.log(animal.isPrototypeOf(rabbit));
+
+//CLASS
+
+ class Comment {
+  constructor(text) {
+    this.text = text;
+    this.votesQty = 0
+  }
+  upvote() {
+    this.votesQty += 1;
+  }
+  downVotesQty() {
+    this.votesQty -= 1;
+  }
+  static mergeComments(first, second) {
+    return `${first} ${second}`
+  }
+ }
+
+ const firstComment = new Comment("FIRST comment");
+ const secondComment = new Comment("SECOND comment");
+ console.log(Comment.prototype === firstComment.__proto__);
+ console.log(Comment.prototype === secondComment.__proto__);
+ 
+console.log( Comment.mergeComments("It is FIRST comment", "It is SECOND comment"));
+console.log(firstComment.hasOwnProperty("text"));
+console.log(firstComment.hasOwnProperty("upvote"));
+
+ 
+ class NumbersArray extends Array {
+  sum() {
+    return this.reduce((acc, el) => acc += el, 0)
+  }
+ }
+ 
+ const myArray = new NumbersArray(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+console.log( myArray);
+console.log( myArray.sum());
+console.log(NumbersArray.prototype === myArray.__proto__);
+
