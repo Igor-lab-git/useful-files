@@ -890,6 +890,7 @@ let rect = {
 }
 rect.__proto__ = geom;
 console.log(rect.draw());
+console.log(rect.name);
 
 
 const userProfile = {
@@ -929,6 +930,8 @@ console.log(longEar.walk());
 console.log(rabbit.walk());
 console.log(Object.getPrototypeOf(rabbit));
 console.log(animal.isPrototypeOf(rabbit));
+
+
 
 //CLASS
 
@@ -970,3 +973,12 @@ console.log( myArray);
 console.log( myArray.sum());
 console.log(NumbersArray.prototype === myArray.__proto__);
 
+
+function f() {
+  console.log("Hello!");
+}
+
+Function.prototype.defer = function(ms) {
+  setTimeout(this, ms)
+}
+f.defer()
