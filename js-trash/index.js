@@ -849,32 +849,6 @@ const product = {
 }
 console.log(product.title = "Honor");
 
-
-class Student {
-  constructor(name, age) {
-    this.name = name,
-    this.age = age
-  }
-
-  set city(value) {
-    const [firstLatter, secondLatter] = value.split(" ");
-    const modifiedFirstLatter = firstLatter[0].toUpperCase() + firstLatter.slice(1).toLowerCase();
-    const modifiedSecondLatter = secondLatter[0].toUpperCase() + secondLatter.slice(1).toLowerCase();
-    this._city = [modifiedFirstLatter, modifiedSecondLatter].join(" ");
-  }
-
-  get  city() {
-    return `My City is ${this._city}`;
-  }
-}
-
-const firstStudent = new Student("Peter", 25);
-const secondStudent = new Student("John", 23);
-
-firstStudent.city = "los angeles";
-console.log(firstStudent.city);
-
-
 //PROTO
 
 let geom = {
@@ -931,6 +905,11 @@ console.log(rabbit.walk());
 console.log(Object.getPrototypeOf(rabbit));
 console.log(animal.isPrototypeOf(rabbit));
 
+const hjh = {a: 18};
+const kh = hjh;
+console.log(hjh === kh);
+console.log({} != {});
+
 
 
 //CLASS
@@ -974,11 +953,86 @@ console.log( myArray.sum());
 console.log(NumbersArray.prototype === myArray.__proto__);
 
 
-function f() {
-  console.log("Hello!");
+class Student {
+  #city = null
+  planet = "Земля"
+  country = "USA"
+  region
+
+  constructor(name, age) {
+    this.name = name
+    this.age = age
+  }
+
+  set city(value) {
+    const [firstCityLatter, secondCityLatter] = value.split(" ");
+    const modifiedFirstCityLatter = firstCityLatter[0].toUpperCase() + firstCityLatter.slice(1).toLowerCase();
+    const modifiedSecondCityLatter = secondCityLatter[0].toUpperCase() + secondCityLatter.slice(1).toLowerCase();
+    this.#city = `${modifiedFirstCityLatter} ${modifiedSecondCityLatter}`;
+  }
+
+  get city() {
+    return `City ${this.#city}`;
+  }
+
+  logAge() {
+    return this.age
+  }
+
+  eat() {
+    console.log("Eating now... :)");
+    
+  }
+
+
+}
+const fourthStudent = new Student("Al", 26);
+console.log(fourthStudent)
+
+
+const firstStudent = new Student("John", 20);
+const thirdStudent = new Student("Pete", 25);
+firstStudent.city = "Los Angeles";
+console.log(firstStudent.logAge());
+console.log(firstStudent.city);
+console.log(thirdStudent);
+
+class Developer extends Student {
+  constructor(name, age, experience) {
+    super(name, age)
+    this.experience = experience
+  }
+  writeCode() {
+    console.log("Write CODE");
+    
+  }
+  eat() {
+    super.eat()
+    console.log("And wothing Youtube... :)");
+    
+  }
 }
 
-Function.prototype.defer = function(ms) {
-  setTimeout(this, ms)
+const devStudent = new Developer("Igor", 30, 2);
+console.log(devStudent);
+devStudent.writeCode();
+devStudent.eat();
+
+
+class Animal {
+  name = 'animal';
+
+  constructor() {
+    console.log(this.name); // (*)
+  }
 }
-f.defer()
+
+class Rabbit extends Animal {
+  name = 'rabbit';
+}
+
+console.log(new Animal());
+console.log(new Rabbit());
+
+new Animal(); // animal
+new Rabbit(); // animal
