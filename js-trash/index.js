@@ -1019,20 +1019,34 @@ devStudent.writeCode();
 devStudent.eat();
 
 
-class Animal {
-  name = 'animal';
+class CofeMashine {
+  _waterLimit = 0;
 
-  constructor() {
-    console.log(this.name); // (*)
+  set waterLimit(value) {
+    if(value < 0) {
+      throw new Error("Отрицательное количество воды быть не может :(")
+    } else {
+      this._waterLimit = value;
+    }
+  }
+
+  get waterLimit() {
+    return this._waterLimit;
+  }
+
+  constructor(power) {
+    this._power = power;
+  }
+
+  get power() {
+    return this._power;
   }
 }
 
-class Rabbit extends Animal {
-  name = 'rabbit';
-}
+const cofeMashine = new CofeMashine(100);
 
-console.log(new Animal());
-console.log(new Rabbit());
+cofeMashine.waterLimit = 10;
+console.log(cofeMashine);
+cofeMashine.power = 1000;
+console.log(cofeMashine instanceof CofeMashine);
 
-new Animal(); // animal
-new Rabbit(); // animal
