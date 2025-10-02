@@ -1062,6 +1062,8 @@ try {
 
 console.log("End Code");
 
+// try catch оборачивается в асинхронный код
+
 setTimeout(() => {
   try {
     const a = 0;
@@ -1070,14 +1072,73 @@ setTimeout(() => {
     console.log("Error Code");
     
   }
-}, 1000)
+}, 1000);
+
+//не корректный json
 
 const dataServer = "{`name`: 'Igor'}";
 try {
   const user = JSON.parse(dataServer);
-  console.log(user);
+  console.log(user.age);
   
+} catch (e) {
+  const error = new Error("Упс какае-то ошибка :)")
+  console.log(error.message);
+}
+
+//trow
+
+const dataRespons = '{"age": 30}';
+try {
+  let user = JSON.parse(dataRespons);
+
+  if(!user.name) {
+    throw new ReferenceError("Данные неполны, нет такого имени :)")
+  }
+  console.log(user?.name);
+  
+} catch (e) {
+  if(e.name == "ReferenceError") {
+    console.error(`JSON Error: ${e.message}`);
+  } else {
+    throw e;
+  }
+} finally {
+  let user = JSON.parse(dataRespons);
+    console.log(user.age);
+}
+
+//Расширение Error
+
+class ValidationError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "ValidationError";
+  }
+}
+const userSignIn = '{ "age": 36 }';
+
+function readUser(json) {
+  let user = JSON.parse(json);
+
+  if( !user.name ) {
+    throw new ValidationError("Not field: name");
+  }
+  if( !user.age ) {
+    throw new ValidationError("Not field: age");
+  }
+
+  return user;
+}
+
+try {
+  let user = readUser( userSignIn );
 } catch (error) {
-  console.log("Error");
-  
+  if(error instanceof ValidationError) {
+    console.error("Не корректные данные: " + error.message);
+  } else if(error instanceof SyntaxError) {
+    console.error("JSON Ошибка синтаксиса: " + error.message);
+  } else {
+    throw error;
+  }
 }
