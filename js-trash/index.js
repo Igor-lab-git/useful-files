@@ -958,7 +958,6 @@ class Student {
   planet = "Земля"
   country = "USA"
   region
-
   constructor(name, age) {
     this.name = name
     this.age = age
@@ -983,8 +982,6 @@ class Student {
     console.log("Eating now... :)");
     
   }
-
-
 }
 const fourthStudent = new Student("Al", 26);
 console.log(fourthStudent)
@@ -1018,35 +1015,69 @@ console.log(devStudent);
 devStudent.writeCode();
 devStudent.eat();
 
-
-class CofeMashine {
-  _waterLimit = 0;
-
-  set waterLimit(value) {
-    if(value < 0) {
-      throw new Error("Отрицательное количество воды быть не может :(")
-    } else {
-      this._waterLimit = value;
-    }
+class Car {
+  _speed = 0
+  constructor(mark, color, power) {
+    this.mark = mark;
+    this.color = color;
+    this.power = power;
+  }
+  set speed(value) {
+    if(value < 0) throw new Error("Speed avto can not mani 0") 
+    this._speed = value
   }
 
-  get waterLimit() {
-    return this._waterLimit;
+  get speed() {
+    return this._speed;
   }
 
-  constructor(power) {
-    this._power = power;
-  }
-
-  get power() {
-    return this._power;
+  stop() {
+    return `${this.mark} stoped`
   }
 }
 
-const cofeMashine = new CofeMashine(100);
+const avto = new Car("Audi", "black", 500);
+avto.speed = 10
+console.log(avto);
+console.log(avto.stop());
+console.log(avto instanceof Car);
 
-cofeMashine.waterLimit = 10;
-console.log(cofeMashine);
-cofeMashine.power = 1000;
-console.log(cofeMashine instanceof CofeMashine);
 
+//Обработка ошибок, "try..catch"
+
+console.log("Begining Code");
+try {
+  // const names = undefined;
+  // const names = ["Pete", "John", "Igor"];
+    names.forEach(name => {
+      console.log(`name: `, name);
+   
+  })
+} catch (error) {
+  console.log("This names undefined", error);
+  console.log("This names undefined", error.message);
+  console.log("This names undefined", error.name);
+  console.log("This names undefined", error.stack);
+}
+
+console.log("End Code");
+
+setTimeout(() => {
+  try {
+    const a = 0;
+    a.forEach((a) => console.log(a))
+  } catch (error) {
+    console.log("Error Code");
+    
+  }
+}, 1000)
+
+const dataServer = "{`name`: 'Igor'}";
+try {
+  const user = JSON.parse(dataServer);
+  console.log(user);
+  
+} catch (error) {
+  console.log("Error");
+  
+}
