@@ -51,17 +51,14 @@
 // console.log(data)
 
 
-import { fruits, name } from "./vars.mjs";
+import {db} from "./vars.mjs";
 
-fruits.forEach(fruit => {
-    console.log(fruit);
+const filteredUser = db.filter((user) => {
+    return user.isAdmin ===true;
 })
 
-console.log(name);
-
-const setItemToLocalStorage = (key, value) => {
-    localStorage.setItem(key, JSON.stringify(value))
+const setUserLocalToStorage = (user) => {
+    localStorage.setItem("user", JSON.stringify(user));
 }
-const array = [1, 2, 3, 4, 5]
 
-setItemToLocalStorage("numbers", array)
+export  { setUserLocalToStorage, filteredUser }
