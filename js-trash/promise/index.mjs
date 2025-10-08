@@ -1,5 +1,8 @@
 
+
 // const div = document.querySelector("#div");
+
+
 
 // fetch('https://jsonplaceholder.typicode.com/posts')
 //   .then((response) => response.json())
@@ -33,16 +36,32 @@
 
 // loadJson('no-such-user.json') // (3)
 
-const getData = async (url) => {
-  try {
-      const response = await fetch(url);
-      const dataParse = await response.json();
-      return dataParse;
-  } catch (error) {
-    console.error(error);
-  }
+// const getData = async (url) => {
+//   try {
+//       const response = await fetch(url);
+//       if(response) {
+//         const dataParse = await response.json();
+//         return dataParse
+//       }
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+// const data = await getData("https://jsonplaceholder.typicode.com/todos");
+// console.log(data)
+
+
+import { fruits, name } from "./vars.mjs";
+
+fruits.forEach(fruit => {
+    console.log(fruit);
+})
+
+console.log(name);
+
+const setItemToLocalStorage = (key, value) => {
+    localStorage.setItem(key, JSON.stringify(value))
 }
-const data = await getData("https://jsonplaceholder.typicode.com/todos");
-console.log(data)
+const array = [1, 2, 3, 4, 5]
 
-
+setItemToLocalStorage("numbers", array)
