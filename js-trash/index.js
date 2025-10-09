@@ -158,7 +158,6 @@
 // console.log("name" in user) ;
 
 
-
 // let schedule = {
 //   name: "Igor"
 // };
@@ -192,7 +191,6 @@
 // Два объекта равны только в том случае, если это один и тот же объект. скопированн объект от щбъекта т у них свои ссылки к этому объекту
 
 
-
 // let menu = {
 //   width: 200,
 //   height: 300,
@@ -203,14 +201,13 @@
 //   for(let prop in obj) {
 //     if(typeof obj[prop] == "number") {
 //       obj[prop] *= 2;
-      
+
 //     }
 //   }
 //   return obj;
 // }
 
 // console.log(multiplyNumeric(menu));
-
 
 
 // const countOfA = 10;
@@ -226,7 +223,6 @@
 // console.log(myFunc());
 
 
-
 // let objTarget = {
 //   name: "Igor",
 //   age: 36,
@@ -236,7 +232,7 @@
 //   },
 //   sayHi() {
 //     console.log(`Hi ${this.name}`);
-    
+
 //   }
 // }
 
@@ -330,7 +326,6 @@
 // console.log(user.toString());
 
 
-
 // setTimeout(() => console.log("Hi Igor"), 2000);
 // setTimeout(console.log("Сейчас сразу!"), 2000);
 
@@ -383,7 +378,6 @@
 // }
 
 // console.log(userInfo.address?.city);
-
 
 
 // //STRING
@@ -474,7 +468,6 @@
 // console.log(extractCurrencyValue('$120'));
 
 
-
 // const myString = "Hi Igor";
 // console.log(myString.includes("Igor"));
 // console.log(myString.indexOf("Igor"));
@@ -525,20 +518,20 @@
 // sumInput()
 
 
-let obj = { name: "John", age: 30 };
-for(let key in obj) {
-  console.log(typeof obj[key]);
+let obj = {name: "John", age: 30};
+for (let key in obj) {
+    console.log(typeof obj[key]);
 }
 
 
 let arr = [10, "20", 30];
-for(let i = 0; i < arr.length; i++) {
-  console.log(typeof arr[i]);
+for (let i = 0; i < arr.length; i++) {
+    console.log(typeof arr[i]);
 }
 
 let arr2 = [10, "20", 30, 50];
-for(let i = arr2.length - 1; i >= 0; i--) {
-  console.log(arr2[i]);
+for (let i = arr2.length - 1; i >= 0; i--) {
+    console.log(arr2[i]);
 }
 
 let arr3 = ["Я", "изучаю", "JavaScript", "Igor", "Array"];
@@ -549,7 +542,7 @@ console.log(arr3);
 
 let arr4 = [1, 2, 3, 4, 5, 6, 7];
 let resArr4 = arr4.slice(0, 4)
-let reversArr4 =  arr4.slice(-3)
+let reversArr4 = arr4.slice(-3)
 console.log(resArr4);
 console.log(reversArr4);
 console.log(arr4.slice());
@@ -559,9 +552,9 @@ let arr5 = [1, 2, 3, 4, 5];
 let resArr5 = arr5.concat(arrNum.slice(-5));
 console.log(resArr5);
 
-let arr6  = ["Бильбо", "Гэндальф", "Назгул"];
+let arr6 = ["Бильбо", "Гэндальф", "Назгул"];
 arr6.forEach((item, index, array) => {
-  console.log(`
+    console.log(`
     Персонаж ${item} под номером ${index} в списке "${array}"
     `);
 })
@@ -572,9 +565,9 @@ console.log(arr7.includes("Шоколад"));
 
 
 let users = [
-  {id: 1, name: "Вася", age: 25},
-  {id: 2, name: "Петя", age: 20},
-  {id: 3, name: "Маша", age: 29}
+    {id: 1, name: "Вася", age: 25},
+    {id: 2, name: "Петя", age: 20},
+    {id: 3, name: "Маша", age: 29}
 ];
 let findUser = users.find((item) => item.id == 1);
 console.log(findUser);
@@ -599,8 +592,8 @@ console.log(arr10.join());
 
 let names = 'Вася, Петя, Маша';
 let arrNames = names.split(",");
-for(let i = 0; i < arrNames.length; i++) {
-  console.log(`
+for (let i = 0; i < arrNames.length; i++) {
+    console.log(`
     Сообщнение получат ${arrNames[i]}
     `);
 }
@@ -642,8 +635,8 @@ const copySorted = (array) => {
 
 console.log(copySorted(["HTML", "JavaScript", "CSS"]));
 
-let usersArray = [ { name: "Вася", surname: "Пупкин", id: 1 }, { name: "Петя", surname: "Иванов", id: 2 },
-    { name: "Маша", surname: "Петрова", id: 3 }];
+let usersArray = [{name: "Вася", surname: "Пупкин", id: 1}, {name: "Петя", surname: "Иванов", id: 2},
+    {name: "Маша", surname: "Петрова", id: 3}];
 
 const arrayFullNames = usersArray.map((user) => {
     return {fullName: `${user.name} ${user.surname}`, id: user.id}
@@ -652,8 +645,8 @@ const arrayFullNames = usersArray.map((user) => {
 console.log(arrayFullNames);
 
 
-const arrUserAge = [{ name: "Вася", age: 25 }, { name: "Петя", age: 30 }, { name: "Маша", age: 28 }];
-const  sortByAge = (array) => {
+const arrUserAge = [{name: "Вася", age: 25}, {name: "Петя", age: 30}, {name: "Маша", age: 28}];
+const sortByAge = (array) => {
     const sortUsers = array.sort((a, b) => a.age - b.age);
     return sortUsers;
 }
@@ -663,12 +656,12 @@ console.log(sortByAge(arrUserAge));
 
 let arr13 = [1, 2, 3];
 const shuffle = (array) => {
-   return  array.sort(() => Math.random() - 0.5)
+    return array.sort(() => Math.random() - 0.5)
 }
 
 console.log(shuffle(arr13));
 
-const arrayUsersMiddleAge = [{ name: "Вася", age: 25 }, { name: "Петя", age: 30 }, { name: "Маша", age: 29 }];
+const arrayUsersMiddleAge = [{name: "Вася", age: 25}, {name: "Петя", age: 30}, {name: "Маша", age: 29}];
 const getAverageAge = (array) => {
     const middleAge = array.reduce((ac, item) => ac + item.age, 0) / array.length;
     return middleAge;
@@ -678,78 +671,81 @@ console.log(getAverageAge(arrayUsersMiddleAge));
 
 
 let strings = ["кришна", "кришна", "харе", "харе", "харе", "харе", "кришна", "кришна", ":-O"];
-  const unique = (array) => {
+const unique = (array) => {
     const uniqueWords = [];
 
     array.forEach(word => !uniqueWords.includes(word) ? uniqueWords.push(word) : "");
     return uniqueWords;
-  }
+}
 console.log(unique(strings));
 
 let usersIDGroup = [
     {id: 'john', name: "John Smith", age: 20},
     {id: 'ann', name: "Ann Smith", age: 24},
     {id: 'pete', name: "Pete Peterson", age: 31},
-  ];
+];
 
-  const groupById = (array) => {
-    const usersById = array.reduce((object, el) => {object[el.id] = el; return object}, {});
+const groupById = (array) => {
+    const usersById = array.reduce((object, el) => {
+        object[el.id] = el;
+        return object
+    }, {});
     return usersById;
-  }
+}
 
-  console.log(groupById(usersIDGroup));
-  
+console.log(groupById(usersIDGroup));
 
-  const fgf = [{name: "Igor", age: 25}, {name: "John", age: 18}, {name: "Alice", age: 29}, {name: "Peter", age: 17}, ]
-  console.log(fgf.filter(el => el.age > 20));
-  console.log(fgf.filter(el => el.age > 20));
-  console.log((fgf.reduce((ac, el) => ac + el.age, 0) / fgf.length));
-  
+
+const fgf = [{name: "Igor", age: 25}, {name: "John", age: 18}, {name: "Alice", age: 29}, {name: "Peter", age: 17},]
+console.log(fgf.filter(el => el.age > 20));
+console.log(fgf.filter(el => el.age > 20));
+console.log((fgf.reduce((ac, el) => ac + el.age, 0) / fgf.length));
+
 
 const fgvv = {id: 1, name: "Igor", age: 25, isActive: true}
 
-  console.log(Object.keys(fgvv));
-  console.log(Object.values(fgvv));
-  console.log(Object.entries(fgvv));
+console.log(Object.keys(fgvv));
+console.log(Object.values(fgvv));
+console.log(Object.entries(fgvv));
 
-  const vbvgf = Object.entries(fgvv);
+const vbvgf = Object.entries(fgvv);
 
-  //Деструктуризация
+//Деструктуризация
 
-  let arr14 = ["Ilya", "Kantor"];
-  const [firstName, surName] = arr14;
-  console.log(firstName, surName);
-  
+let arr14 = ["Ilya", "Kantor"];
+const [firstName, surName] = arr14;
+console.log(firstName, surName);
+
 let options = {
-  title: "Menu",
-  width: 100,
-  height: 200
+    title: "Menu",
+    width: 100,
+    height: 200
 };
 
-const { title, width, height } = options;
-console.log(title, width, height );
+const {title, width, height} = options;
+console.log(title, width, height);
 
-let user = { name: "John", years: 30 };
-const { name, years, isAdmin : isAdmin  =false} = user;
-console.log( name, years, isAdmin );
+let user = {name: "John", years: 30};
+const {name, years, isAdmin: isAdmin = false} = user;
+console.log(name, years, isAdmin);
 
 let salaries = {
-  "John": 100,
-  "Pete": 300,
-  "Mary": 250
+    "John": 100,
+    "Pete": 300,
+    "Mary": 250
 };
 
 const topSalary = (salaries) => {
-  let maxSum = 0;
-  let maxName = null;
+    let maxSum = 0;
+    let maxName = null;
 
-  for(const [name, salary] of Object.entries(salaries)) {
-    if(maxSum < salary) {
-      maxSum = salary;
-      maxName = name
+    for (const [name, salary] of Object.entries(salaries)) {
+        if (maxSum < salary) {
+            maxSum = salary;
+            maxName = name
+        }
     }
-  }
-  return maxName;
+    return maxName;
 }
 
 console.log(topSalary(salaries));
@@ -762,11 +758,11 @@ console.log(now.getTimezoneOffset());
 
 
 let student = {
-  name: 'John',
-  age: 30,
-  isAdmin: false,
-  courses: ['html', 'css', 'js'],
-  wife: null
+    name: 'John',
+    age: 30,
+    isAdmin: false,
+    courses: ['html', 'css', 'js'],
+    wife: null
 };
 
 const jsonStudent = JSON.stringify(student);
@@ -781,23 +777,23 @@ let timeId = setInterval(() => console.log("Igor"), 1000);
 setTimeout(() => clearInterval(timeId), 5000)
 
 const printNumbers = (from, to) => {
-  let currentNum = from;
+    let currentNum = from;
 
-  let timeId = setInterval(() => {
-    console.log(currentNum);
-    if(currentNum == to) {
-      clearInterval(timeId)
-    } else {
-      currentNum++;
-    }
-  }, 1000)
+    let timeId = setInterval(() => {
+        console.log(currentNum);
+        if (currentNum == to) {
+            clearInterval(timeId)
+        } else {
+            currentNum++;
+        }
+    }, 1000)
 }
 
 console.log(printNumbers(1, 5));
 
 
 const logMessage = (name, age) => {
-  console.log(`Hi my name is ${name} and me ${age} old year`);
+    console.log(`Hi my name is ${name} and me ${age} old year`);
 }
 
 setTimeout(logMessage, 1500, "Igor", 36)
@@ -805,11 +801,11 @@ setTimeout(logMessage, 1500, "Igor", 36)
 //Флаги и дескрипторы свойств
 
 let userConfig = {
-  name: "Igor"
+    name: "Igor"
 };
 
 Object.defineProperty(userConfig, "name", {
-  writable: false
+    writable: false
 });
 console.log(userConfig.name = "John");
 
@@ -819,14 +815,14 @@ console.log(description);
 // геттеры и сеттеры javascript КОНСТРУКТОРЫ
 
 const userPer = {
-  name: "John", 
-  surName: "Smit",
-  get fullName() {
-    return `${this.name} ${this.surName}`
-  },
-  set fullName(value) {
-    [this.name, this.surName] = value.split(" ")
-  }
+    name: "John",
+    surName: "Smit",
+    get fullName() {
+        return `${this.name} ${this.surName}`
+    },
+    set fullName(value) {
+        [this.name, this.surName] = value.split(" ")
+    }
 }
 
 userPer.fullName = "Peter Karter"
@@ -834,33 +830,33 @@ console.log(userPer.name);
 console.log(userPer.surName);
 
 const product = {
-  id:1,
-  price: 200000,
-  getPrice() {
-    return this.price
-  },
-  set title(value) {
-    return value
-  },
+    id: 1,
+    price: 200000,
+    getPrice() {
+        return this.price
+    },
+    set title(value) {
+        return value
+    },
 
-  get title () {
-    return "My mackbook " + this.price + " $"
-  }
+    get title() {
+        return "My mackbook " + this.price + " $"
+    }
 }
 console.log(product.title = "Honor");
 
 //PROTO
 
 let geom = {
-  name: "Figure",
-  sp:  {x: 0, y: 0},
-  ep: {x: 100, y: 20}
+    name: "Figure",
+    sp: {x: 0, y: 0},
+    ep: {x: 100, y: 20}
 }
 
 let rect = {
-  draw() {
-    console.log("Рисовать прямоугольник " + this.sp.x+","+this.sp.y)
-  }
+    draw() {
+        console.log("Рисовать прямоугольник " + this.sp.x + "," + this.sp.y)
+    }
 }
 rect.__proto__ = geom;
 console.log(rect.draw());
@@ -868,10 +864,10 @@ console.log(rect.name);
 
 
 const userProfile = {
-  name: "Igor",
-  commentsQty: 25,
-  age: 0,
-  hasSignetAgreement: true
+    name: "Igor",
+    commentsQty: 25,
+    age: 0,
+    hasSignetAgreement: true
 }
 // for(let key in userProfile) {
 //   console.log(userProfile[key]);
@@ -882,18 +878,18 @@ Object.values(userProfile).forEach(value => console.log(value));
 Object.entries(userProfile).forEach(([key, value]) => console.log(key, value));
 
 const animal = {
-  eats: true,
-  walk() {
-    return "Animal is walking";
-  }
+    eats: true,
+    walk() {
+        return "Animal is walking";
+    }
 }
 
 const rabbit = {
-  jumps: true,
+    jumps: true,
 }
 
 const longEar = {
-  longEar: 10,
+    longEar: 10,
 }
 
 Object.setPrototypeOf(rabbit, animal);
@@ -911,78 +907,82 @@ console.log(hjh === kh);
 console.log({} != {});
 
 
-
 //CLASS
 
- class Comment {
-  constructor(text) {
-    this.text = text;
-    this.votesQty = 0
-  }
-  upvote() {
-    this.votesQty += 1;
-  }
-  downVotesQty() {
-    this.votesQty -= 1;
-  }
-  static mergeComments(first, second) {
-    return `${first} ${second}`
-  }
- }
+class Comment {
+    constructor(text) {
+        this.text = text;
+        this.votesQty = 0
+    }
 
- const firstComment = new Comment("FIRST comment");
- const secondComment = new Comment("SECOND comment");
- console.log(Comment.prototype === firstComment.__proto__);
- console.log(Comment.prototype === secondComment.__proto__);
- 
-console.log( Comment.mergeComments("It is FIRST comment", "It is SECOND comment"));
+    upvote() {
+        this.votesQty += 1;
+    }
+
+    downVotesQty() {
+        this.votesQty -= 1;
+    }
+
+    static mergeComments(first, second) {
+        return `${first} ${second}`
+    }
+}
+
+const firstComment = new Comment("FIRST comment");
+const secondComment = new Comment("SECOND comment");
+console.log(Comment.prototype === firstComment.__proto__);
+console.log(Comment.prototype === secondComment.__proto__);
+
+console.log(Comment.mergeComments("It is FIRST comment", "It is SECOND comment"));
 console.log(firstComment.hasOwnProperty("text"));
 console.log(firstComment.hasOwnProperty("upvote"));
 
- 
- class NumbersArray extends Array {
-  sum() {
-    return this.reduce((acc, el) => acc += el, 0)
-  }
- }
- 
- const myArray = new NumbersArray(1, 2, 3, 4, 5, 6, 7, 8, 9);
 
-console.log( myArray);
-console.log( myArray.sum());
+class NumbersArray extends Array {
+    sum() {
+        return this.reduce((acc, el) => acc += el, 0)
+    }
+}
+
+const myArray = new NumbersArray(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+console.log(myArray);
+console.log(myArray.sum());
 console.log(NumbersArray.prototype === myArray.__proto__);
 
 
 class Student {
-  #city = null
-  planet = "Земля"
-  country = "USA"
-  region
-  constructor(name, age) {
-    this.name = name
-    this.age = age
-  }
+    #city = null
+    planet = "Земля"
+    country = "USA"
+    region
 
-  set city(value) {
-    const [firstCityLatter, secondCityLatter] = value.split(" ");
-    const modifiedFirstCityLatter = firstCityLatter[0].toUpperCase() + firstCityLatter.slice(1).toLowerCase();
-    const modifiedSecondCityLatter = secondCityLatter[0].toUpperCase() + secondCityLatter.slice(1).toLowerCase();
-    this.#city = `${modifiedFirstCityLatter} ${modifiedSecondCityLatter}`;
-  }
+    constructor(name, age) {
+        this.name = name
+        this.age = age
+    }
 
-  get city() {
-    return `City ${this.#city}`;
-  }
+    set city(value) {
+        const [firstCityLatter, secondCityLatter] = value.split(" ");
+        const modifiedFirstCityLatter = firstCityLatter[0].toUpperCase() + firstCityLatter.slice(1).toLowerCase();
+        const modifiedSecondCityLatter = secondCityLatter[0].toUpperCase() + secondCityLatter.slice(1).toLowerCase();
+        this.#city = `${modifiedFirstCityLatter} ${modifiedSecondCityLatter}`;
+    }
 
-  logAge() {
-    return this.age
-  }
+    get city() {
+        return `City ${this.#city}`;
+    }
 
-  eat() {
-    console.log("Eating now... :)");
-    
-  }
+    logAge() {
+        return this.age
+    }
+
+    eat() {
+        console.log("Eating now... :)");
+
+    }
 }
+
 const fourthStudent = new Student("Al", 26);
 console.log(fourthStudent)
 
@@ -995,19 +995,21 @@ console.log(firstStudent.city);
 console.log(thirdStudent);
 
 class Developer extends Student {
-  constructor(name, age, experience) {
-    super(name, age)
-    this.experience = experience
-  }
-  writeCode() {
-    console.log("Write CODE");
-    
-  }
-  eat() {
-    super.eat()
-    console.log("And wothing Youtube... :)");
-    
-  }
+    constructor(name, age, experience) {
+        super(name, age)
+        this.experience = experience
+    }
+
+    writeCode() {
+        console.log("Write CODE");
+
+    }
+
+    eat() {
+        super.eat()
+        console.log("And wothing Youtube... :)");
+
+    }
 }
 
 const devStudent = new Developer("Igor", 30, 2);
@@ -1016,24 +1018,26 @@ devStudent.writeCode();
 devStudent.eat();
 
 class Car {
-  _speed = 0
-  constructor(mark, color, power) {
-    this.mark = mark;
-    this.color = color;
-    this.power = power;
-  }
-  set speed(value) {
-    if(value < 0) throw new Error("Speed avto can not mani 0") 
-    this._speed = value
-  }
+    _speed = 0
 
-  get speed() {
-    return this._speed;
-  }
+    constructor(mark, color, power) {
+        this.mark = mark;
+        this.color = color;
+        this.power = power;
+    }
 
-  stop() {
-    return `${this.mark} stoped`
-  }
+    set speed(value) {
+        if (value < 0) throw new Error("Speed avto can not mani 0")
+        this._speed = value
+    }
+
+    get speed() {
+        return this._speed;
+    }
+
+    stop() {
+        return `${this.mark} stoped`
+    }
 }
 
 const avto = new Car("Audi", "black", 500);
@@ -1047,17 +1051,17 @@ console.log(avto instanceof Car);
 
 console.log("Begining Code");
 try {
-  // const names = undefined;
-  // const names = ["Pete", "John", "Igor"];
+    // const names = undefined;
+    // const names = ["Pete", "John", "Igor"];
     names.forEach(name => {
-      console.log(`name: `, name);
-   
-  })
+        console.log(`name: `, name);
+
+    })
 } catch (error) {
-  console.log("This names undefined", error);
-  console.log("This names undefined", error.message);
-  console.log("This names undefined", error.name);
-  console.log("This names undefined", error.stack);
+    console.log("This names undefined", error);
+    console.log("This names undefined", error.message);
+    console.log("This names undefined", error.name);
+    console.log("This names undefined", error.stack);
 }
 
 console.log("End Code");
@@ -1065,82 +1069,83 @@ console.log("End Code");
 // try catch оборачивается в асинхронный код
 
 setTimeout(() => {
-  try {
-    const a = 0;
-    a.forEach((a) => console.log(a))
-  } catch (error) {
-    console.log("Error Code");
-    
-  }
+    try {
+        const a = 0;
+        a.forEach((a) => console.log(a))
+    } catch (error) {
+        console.log("Error Code");
+
+    }
 }, 1000);
 
 //не корректный json
 
 const dataServer = "{`name`: 'Igor'}";
 try {
-  const user = JSON.parse(dataServer);
-  console.log(user.age);
-  
+    const user = JSON.parse(dataServer);
+    console.log(user.age);
+
 } catch (e) {
-  const error = new Error("Упс какае-то ошибка :)")
-  console.log(error.message);
+    const error = new Error("Упс какае-то ошибка :)")
+    console.log(error.message);
 }
 
 //trow
 
 const dataRespons = '{"age": 30}';
 try {
-  let user = JSON.parse(dataRespons);
+    let user = JSON.parse(dataRespons);
 
-  if(!user.name) {
-    throw new ReferenceError("Данные неполны, нет такого имени :)")
-  }
-  console.log(user?.name);
-  
+    if (!user.name) {
+        throw new ReferenceError("Данные неполны, нет такого имени :)")
+    }
+    console.log(user?.name);
+
 } catch (e) {
-  if(e.name == "ReferenceError") {
-    console.error(`JSON Error: ${e.message}`);
-  } else {
-    throw e;
-  }
+    if (e.name == "ReferenceError") {
+        console.error(`JSON Error: ${e.message}`);
+    } else {
+        throw e;
+    }
 } finally {
-  let user = JSON.parse(dataRespons);
+    let user = JSON.parse(dataRespons);
     console.log(user.age);
 }
 
 //Расширение Error
 
 class ValidationError extends Error {
-  constructor(message) {
-    super(message);
-    this.name = "ValidationError";
-  }
+    constructor(message) {
+        super(message);
+        this.name = "ValidationError";
+    }
 }
+
 const userSignIn = '{ "age": 36 }';
 
 function readUser(json) {
-  let user = JSON.parse(json);
+    let user = JSON.parse(json);
 
-  if( !user.name ) {
-    throw new ValidationError("Not field: name");
-  }
-  if( !user.age ) {
-    throw new ValidationError("Not field: age");
-  }
+    if (!user.name) {
+        throw new ValidationError("Not field: name");
+    }
+    if (!user.age) {
+        throw new ValidationError("Not field: age");
+    }
 
-  return user;
+    return user;
 }
 
 try {
-  let user = readUser( userSignIn );
+    let user = readUser(userSignIn);
 } catch (error) {
-  if(error instanceof ValidationError) {
-    console.error("Не корректные данные: " + error.message);
-  } else if(error instanceof SyntaxError) {
-    console.error("JSON Ошибка синтаксиса: " + error.message);
-  } else {
-    throw error;
-  }
+    if (error instanceof ValidationError) {
+        console.error("Не корректные данные: " + error.message);
+    } else if (error instanceof SyntaxError) {
+        console.error("JSON Ошибка синтаксиса: " + error.message);
+    } else {
+        throw error;
+    }
 }
 
 
@@ -1148,6 +1153,4 @@ try {
 
 //Введение: колбэки
 
-const ffg = 10;
-const cvcv = 10 ;
-console.log(String(ffg) + String(cvcv))
+
