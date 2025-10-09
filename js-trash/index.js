@@ -1147,3 +1147,7 @@ try {
 //Промисы, async/await
 
 //Введение: колбэки
+
+const ffg = 10;
+const cvcv = 10 ;
+console.log(String(ffg) + String(cvcv))
