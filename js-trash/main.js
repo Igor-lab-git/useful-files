@@ -3,3 +3,4 @@ const logMessage = (date, importance, message) => {
 }
 
 console.log(logMessage( new Date(),"message", "my message"))
+
