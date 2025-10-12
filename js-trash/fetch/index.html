@@ -6,13 +6,32 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="./index.js" defer></script>
 </head>
 <body>
-    <div class="div">1</div>
-    <div class="div">2</div>
+    <div id="element"> DOM</div>
+    <div id="content">Element</div>
     <div class="div">3</div>
     <div class="div">4</div>
     <div class="div">5</div>
-<script src="./index.js"></script>
+    <ul id="list">
+        <li>Elements</li>
+        <li>Нажмите</li>
+        <li>полностью</li>
+        <li>пройден</li>
+        <li id="item">
+            <a id="link" href="#">Home</a>
+        </li>
+    </ul>
+    <button id="button">Click my</button>
+    <label>
+        <input type="radio" name="age" value="young" checked> младше 18
+    </label>
+    <label>
+        <input type="radio" name="age" value="mature"> от 18 до 50
+    </label>
+    <label>
+        <input type="radio" name="age" value="senior"> старше 60
+    </label>
 </body>
 </html>
