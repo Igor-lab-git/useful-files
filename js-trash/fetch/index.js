@@ -69,4 +69,48 @@ console.log(typeof allInput)
 
 console.log(window)
 
+console.log(document.body)
+console.dir(document.body)
+
+const label = document.querySelector("#label");
+console.log(typeof  label.innerHTML)
+
+console.log(list[0].innerText = "<div>Привет<img src='smile.gif'/> !</div>")
+const newItem = document.createElement("p");
+list[3].append(newItem)
+newItem.outerHTML = "<p>My new Text LI</p>";
+
+console.log(list[2].textContent);
+
+let news = document.querySelector("#news")
+console.log(news.textContent= "Введите ваше имя?, <b>Винни-пух!</b>");
+console.log(news.innerHTML= "Введите ваше имя?, <b>Винни-пух!</b>");
+
+
+button.addEventListener("click", () => {
+    news.hidden = true
+})
+
+const inputText = document.querySelector("#inputText");
+console.log(inputText.type );
+console.log(inputText.id );
+console.log(inputText.value );
+
+
+
+const bodyElement = document.querySelector("body")
+console.log(list[2].outerHTML);
+
+const paragraph = document.querySelector("#paragraph");
+console.log(paragraph.innerText);
+
+const listTest = document.querySelectorAll("#listTest > li");
+
+[...listTest].forEach(el => console.log(el.textContent))
+console.log(listTest.length);
+
+
+
+
+
 
