@@ -38,15 +38,36 @@
     <label>
         <input type="radio" name="age" value="senior"> старше 60
     </label>
-    <label for="#">
+    <label >
         <input id="inputText" type="text" value="John">
     </label>
 
-    <ul id="listTest">
-        <li>без поддерева</li>
-        <li>всех вложенных</li>
-        <li>без поддерева</li>
-        <li>всех вложенных</li>
+    <ul id="listTest" data-js-list>
+        <li data-js-list-item>без поддерева</li>
+        <li data-js-list-item>всех вложенных</li>
+        <li data-js-list-item>без поддерева</li>
+        <li data-js-list-item>всех вложенных</li>
     </ul>
+<div data-id="1" class="box-1">
+    <div class="box-2">
+        <div data-some-value="Title box-3" class="box-3"></div>
+    </div>
+</div>
+    <form data-js-form-sign-in action="/login">
+        <input class="form__input" type="text" name="name" placeholder="Add text...">
+        <input data-js-form-input-password class="form__input" type="password" name="password" value="admin" placeholder="Add password...">
+        <input class="form__button" type="submit" name="submit" value="ADD">
+    </form>
+    <a id="a" href="#hello">link</a>
+    <div data-widget-name="menu">Choose the genre</div>
 </body>
+<a name="listLink">the list</a>
+<ul>
+    <li><a href="http://google.com">http://google.com</a></li>
+    <li><a href="/tutorial">/tutorial.html</a></li>
+    <li><a href="local/path">local/path</a></li>
+    <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+    <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+    <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+</ul>
 </html>

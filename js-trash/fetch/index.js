@@ -109,8 +109,48 @@ const listTest = document.querySelectorAll("#listTest > li");
 [...listTest].forEach(el => console.log(el.textContent))
 console.log(listTest.length);
 
+console.dir(listTest)
 
+const thirdBoxElement = document.querySelector(".box-3");
+const firstBoxElement = thirdBoxElement.closest(".box-1");
+const secondBoxElement = thirdBoxElement.closest(".box-2");
+console.dir(thirdBoxElement);
+console.dir(firstBoxElement);
 
+const listElement = document.querySelector("[data-js-list]");
+const itemsElementList = document.querySelectorAll("[data-js-list-item]");
+console.log(listElement);
+console.log(itemsElementList[0]);
+
+const formSignIn = document.querySelector("[data-js-form-sign-in]");
+const inputPassword = document.querySelector("[data-js-form-input-password]")
+console.log(formSignIn.action);
+console.log(inputPassword.value);
+for(let attr of inputPassword.attributes) {
+    console.log(`${attr.name} = ${attr.value}`);
+}
+formSignIn.action = "/register";
+
+console.log(thirdBoxElement.getAttribute("data-some-value"));
+console.log(firstBoxElement.getAttribute("data-id"))
+console.log(secondBoxElement.setAttribute("data-js-id", "2"));
+console.log(secondBoxElement.hasAttribute("data-js-id"));
+
+const linkHello = document.querySelector("#a");
+console.log(linkHello.href)
+const divElementAttr = document.querySelector("[data-widget-name]")
+console.log(divElementAttr.getAttribute("data-widget-name"))
+console.log(divElementAttr.dataset.widgetName);
+
+const listLink = document.querySelectorAll("a");
+
+for(let link of listLink) {
+    const isHrefToLink = link.getAttribute("href");
+    if(!isHrefToLink) continue;
+    if(!isHrefToLink.includes("://")) continue;
+    if(isHrefToLink.startsWith("http://internal.com")) continue;
+    link.style.color = "orange";
+}
 
 
 
