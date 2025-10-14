@@ -122,6 +122,7 @@ const itemsElementList = document.querySelectorAll("[data-js-list-item]");
 console.log(listElement);
 console.log(itemsElementList[0]);
 
+
 const formSignIn = document.querySelector("[data-js-form-sign-in]");
 const inputPassword = document.querySelector("[data-js-form-input-password]")
 console.log(formSignIn.action);
@@ -130,6 +131,9 @@ for(let attr of inputPassword.attributes) {
     console.log(`${attr.name} = ${attr.value}`);
 }
 formSignIn.action = "/register";
+console.log(inputPassword.name);
+
+
 
 console.log(thirdBoxElement.getAttribute("data-some-value"));
 console.log(firstBoxElement.getAttribute("data-id"))
@@ -151,6 +155,50 @@ for(let link of listLink) {
     if(isHrefToLink.startsWith("http://internal.com")) continue;
     link.style.color = "orange";
 }
+
+
+const divElement = document.createElement("div");
+divElement.className = "alert";
+divElement.innerHTML = "<strong>Всем привет!</strong> Вы прочитали важное сообщение."
+
+
+bodyElement.append(divElement); //ДОБАВИТЬ В КОНЕЦ 
+const divElementClone = divElement.cloneNode(true); //КЛОНИРОВАНИЕ
+divElement.after(divElementClone.innerText = "Hy my frands") //ДОБАВИТЬ В КОНЕЦ НУЖНОГО ЭЛЕМЕНТА
+
+
+const btnElementBeforeLink = document.createElement("button").textContent = "BUTTON-BEFORE";
+formSignIn.before(btnElementBeforeLink);
+
+
+const divStyle = document.querySelector("#divStyle");
+const btnToggle = document.querySelector("#btnToggle");
+btnToggle.addEventListener("click", () => {
+    divStyle.classList.toggle("error")
+})
+
+const hasError = false;
+
+divStyle.classList.toggle("error", hasError);
+
+
+const btnShowModal = document.querySelector("#btnShowModal");
+const modalElement = document.querySelector("#modal");
+const btnClose = document.querySelector("#close");
+
+btnShowModal.addEventListener("click", () => {
+    modalElement.classList.add("modalBlok")
+})
+btnClose.addEventListener("click", () => {
+    modalElement.classList.remove("modalBlok")
+})
+console.log(modalElement.classList.contains("modal"));
+
+console.log(window.getComputedStyle(btnClose).color); //УЗНАТЬ ВСЕ ИЛИ КОНКРУТНЫЙ СТИЛ ВО ВСЕ СТИЛЯХ КОСКАДНОЙ ТАБЛИЦЫ
+
+
+
+
 
 
 
