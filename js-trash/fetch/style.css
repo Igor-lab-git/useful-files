@@ -39,6 +39,9 @@
 }
 
 .notification {
-  top: 10;
-  right: 10;
+  top: 10px;
+  right: 10px;
+  color: yellow;
+  background-color: darkred;
+  border: 2px solid darkred;
 }

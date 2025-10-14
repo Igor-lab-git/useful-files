@@ -163,7 +163,7 @@ divElement.innerHTML = "<strong>Всем привет!</strong> Вы прочи�
 
 
 bodyElement.append(divElement); //ДОБАВИТЬ В КОНЕЦ 
-const divElementClone = divElement.cloneNode(true); //КЛОНИРОВАНИЕ
+const divElementClone = divElement.cloneNode(true); //КЛОНИРОВАНИЕ ЭЛЕМЕНТА
 divElement.after(divElementClone.innerText = "Hy my frands") //ДОБАВИТЬ В КОНЕЦ НУЖНОГО ЭЛЕМЕНТА
 
 
@@ -197,6 +197,20 @@ console.log(modalElement.classList.contains("modal"));
 console.log(window.getComputedStyle(btnClose).color); //УЗНАТЬ ВСЕ ИЛИ КОНКРУТНЫЙ СТИЛ ВО ВСЕ СТИЛЯХ КОСКАДНОЙ ТАБЛИЦЫ
 
 
+const showNotification = () => {
+    const divElementShowNotification = document.createElement("div");
+    divElementShowNotification.classList.add("notification");
+    divElementShowNotification.textContent = "Hello!";
+    document.body.append(divElementShowNotification);
+    setTimeout(() => divElementShowNotification.remove(), 1500)
+}
+showNotification();
+
+const htmlElement = document.documentElement
+console.log(htmlElement.clientHeight);
+console.log(htmlElement.clientWidth);
+console.log(htmlElement.scrollHeight);
+console.log(htmlElement.scrollWidth);
 
 
 
