@@ -279,4 +279,4 @@ boxId3.addEventListener("click", (event) => {
 
 window.addEventListener("keydown", (event) => {
     alert(`Нажата кнопка: ${event.key}`)
-})
+}) //ПОКАЗЫВАЕТ НА КАКУЮ КНОПКУ НАЖАЛ
