@@ -280,3 +280,21 @@ boxId3.addEventListener("click", (event) => {
 window.addEventListener("keydown", (event) => {
     alert(`Нажата кнопка: ${event.key}`)
 }) //ПОКАЗЫВАЕТ НА КАКУЮ КНОПКУ НАЖАЛ
+
+const wrapperBox = document.querySelector("#wrapperBox");
+const articleBox = document.querySelector("#articleBox");
+const textBox = document.querySelector("#textBox");
+
+const showTagName = (event) => {
+    console.log(event.currentTarget.tagName.toUpperCase());
+    // event.stopPropagation()
+}
+wrapperBox.addEventListener("click", showTagName, {capture: true});
+articleBox.addEventListener("click", showTagName, {capture: true});
+textBox.addEventListener("click", showTagName, {capture: true});
+
+wrapperBox.addEventListener("click",  showTagName);
+articleBox.addEventListener("click", showTagName);
+textBox.addEventListener("click", showTagName);
+
+
