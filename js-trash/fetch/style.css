@@ -45,3 +45,7 @@
   background-color: darkred;
   border: 2px solid darkred;
 }
+
+.hidden {
+  display: none;
+}

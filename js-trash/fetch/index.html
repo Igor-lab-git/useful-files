@@ -10,6 +10,9 @@
     <script src="./index.js" defer></script>
 </head>
 <body>
+        <button id="btnScrollTop" style="position: fixed; right: 200px;">SCROLL TOP</button>
+
+        <button id="btnScrollBottom" style="position: fixed; top: 50px; right: 100px;">SCROLL BOTTOM</button>
     <div id="element"> DOM</div>
     <div id="content">Element</div>
     <div class="div">3</div>
@@ -42,7 +45,7 @@
     <label >
         <input id="inputText" type="text" value="John">
     </label>
-
+    
     <ul id="listTest" data-js-list>
         <li data-js-list-item>без поддерева</li>
         <li data-js-list-item>всех вложенных</li>
@@ -76,6 +79,23 @@
     <div class="modal" id="modal">
         Спасибо за покупку, ваш товар готовится
         <button class="close" id="close">X</button>
+    </div>
+    <button onclick="alert(this.innerHTML)">This Button-ONE</button>
+    <button onclick="alert(this.innerHTML)">This Button-TWO</button>
+
+    <button id="btnHidden">Скрыть</button>
+    <p id="textHidden">Tesxt HIDDEN</p>
+    <input type="button" onclick="this.hidden = true" value="Нажми, чтобы спрятать">
+    <button id="btnEvent">EVENT</button>
+
+    <div style="width: 400px; height: 300px; background-color: blue; padding: 30px;" id="boxId1">
+        BOX-1
+        <div style="width: 300px; height: 200px; background-color: yellow; padding: 30px;" id="boxId2">
+            BOX-2
+            <div style="width: 200px; height: 100px; background-color: green; padding: 30px;" id="boxId3">
+                BOX-3
+            </div>
+        </div>
     </div>
 </body>
 </html>

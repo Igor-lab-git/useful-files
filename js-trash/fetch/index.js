@@ -194,7 +194,7 @@ btnClose.addEventListener("click", () => {
 })
 console.log(modalElement.classList.contains("modal"));
 
-console.log(window.getComputedStyle(btnClose).color); //УЗНАТЬ ВСЕ ИЛИ КОНКРУТНЫЙ СТИЛ ВО ВСЕ СТИЛЯХ КОСКАДНОЙ ТАБЛИЦЫ
+console.log(window.getComputedStyle(btnClose).color); //УЗНАТЬ ВСЕ ИЛИ КОНКРЕТНЫЙ СТИЛ ВО ВСЕ СТИЛЯХ КОСКАДНОЙ ТАБЛИЦЫ
 
 
 const showNotification = () => {
@@ -212,7 +212,71 @@ console.log(htmlElement.clientWidth);
 console.log(htmlElement.scrollHeight);
 console.log(htmlElement.scrollWidth);
 
+let scrollHeight = Math.max(
+    document.body.scrollHeight, document.documentElement.scrollHeight,
+    document.body.offsetHeight, document.documentElement.offsetHeight,
+    document.body.clientHeight, document.documentElement.clientHeight
+  );
+console.log(scrollHeight); //АКТУАЛЬНАЯ ВЫЧИСЛЕННАЯ ВЫСОТА
 
+const setScrollTop = () => {
+    window.scrollBy({
+        top: 30,
+        left: 0,
+        behavior: "smooth"
+    });
+} //FUNCTION ПРОСКРОЛИТЬ НУЖНОЕ КОЛЛИЧЕСТВО ПИКСИЛЕЙ ВЕРТИКАЛЬНО
 
+const setScrollBottom = () => {
+    window.scrollTo(0, 0);
+}
 
+const btnScrollTop = document.querySelector("#btnScrollTop");
+btnScrollTop.addEventListener("click", () => {
+    setScrollTop();
+})
 
+const btnScrollBottom = document.querySelector("#btnScrollBottom");
+btnScrollBottom.addEventListener("click", () => {
+    setScrollBottom();
+})
+
+// document.body.addEventListener("click",  function(event) {
+//     console.log(event.clientY, event.clientY);
+//     console.log(event.type, + "на" +  event.currentTarget);
+// })
+
+const btnHidden = document.querySelector("#btnHidden");
+const textHidden = document.querySelector("#textHidden");
+
+btnHidden.addEventListener("click", () => {
+    textHidden.classList.toggle("hidden")
+})
+
+const btnEventElement = document.querySelector("#btnEvent");
+btnEvent.addEventListener("click", (Event) => {
+    console.log(Event);
+})
+
+//ВСПЛЫТИЕ 
+const boxId1 = document.querySelector("#boxId1");
+const boxId2 = document.querySelector("#boxId2");
+const boxId3 = document.querySelector("#boxId3");
+
+boxId1.addEventListener("click", (event) => {
+    console.log("click on box 1", event.target, event.currentTarget);
+})
+boxId2.addEventListener("click", (event) => {
+    console.log("click on box 2");
+})
+boxId3.addEventListener("click", (event) => {
+    console.log("click on box 3");
+    event.stopImmediatePropagation()
+})
+boxId3.addEventListener("click", (event) => {
+    console.log("click on box 3");
+})
+
+window.addEventListener("keydown", (event) => {
+    alert(`Нажата кнопка: ${event.key}`)
+})
