@@ -298,3 +298,34 @@ articleBox.addEventListener("click", showTagName);
 textBox.addEventListener("click", showTagName);
 
 
+const listAppentChild = document.querySelector("#listAppentChild");
+
+for(let i = 0; i <= 7; i++) {
+    const newItem = listAppentChild.appendChild(document.createElement("li")); //возвращает созданный li добавленный одновременно в список ul
+    newItem.textContent = `New element ${i}`;
+    if(i % 2 === 0) {
+        newItem.style.color = "red";
+    } else {
+        newItem.style.color = "yellow";
+    }
+}//ПРИМЕНЕНИЕ appendChild И ВОЗВРАТА ССЫЛКИ НА СОЗДАННЫЙ li
+
+
+document.addEventListener("click", (event) => {
+    if(event.target.classList.contains("todo__item")) {
+        event.target.classList.add("isActive")
+    } else if(event.target.closest("todo__item")) {
+        event.target.classList.add("isActive")
+    }
+})
+
+const addItemListTodo = () => {
+    const todoList = document.querySelector(".todo__list");
+    const item = `<li class="todo__item" >Todo item...</li>`;
+    todoList.insertAdjacentHTML("beforeend", item)
+}
+
+addItemListTodo()
+addItemListTodo()
+addItemListTodo()
+addItemListTodo()

@@ -49,3 +49,22 @@
 .hidden {
   display: none;
 }
+
+.todo__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.todo__item {
+  padding: 3px;
+  max-width: 100px;
+  color: deeppink;
+  border: 2px solid purple;
+}
+
+.todo__item.isActive {
+  color: crimson;
+  border-color: black;
+  background-color: aquamarine;
+}
