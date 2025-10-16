@@ -329,3 +329,6 @@ addItemListTodo()
 addItemListTodo()
 addItemListTodo()
 addItemListTodo()
+
+const linkPrevent = document.querySelector("#linkPrevent");
+linkPrevent.addEventListener("click", (e) => {})
