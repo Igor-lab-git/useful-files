@@ -264,22 +264,24 @@ const boxId2 = document.querySelector("#boxId2");
 const boxId3 = document.querySelector("#boxId3");
 
 boxId1.addEventListener("click", (event) => {
-    console.log("click on box 1", event.target, event.currentTarget);
+    console.log("click on box 1", event.target);
 })
 boxId2.addEventListener("click", (event) => {
-    console.log("click on box 2");
-})
+    console.log("click on box 2", event.target);
+    event.stopPropagation()
+    
+}, true)
 boxId3.addEventListener("click", (event) => {
-    console.log("click on box 3");
-    event.stopImmediatePropagation()
+    console.log("click on box 3", event.target);
+    // event.stopImmediatePropagation()
 })
-boxId3.addEventListener("click", (event) => {
-    console.log("click on box 3");
-})
+// boxId3.addEventListener("click", (event) => {
+//     console.log("click on box 3");
+// })
 
-window.addEventListener("keydown", (event) => {
-    alert(`Нажата кнопка: ${event.key}`)
-}) //ПОКАЗЫВАЕТ НА КАКУЮ КНОПКУ НАЖАЛ
+// window.addEventListener("keydown", (event) => {
+//     alert(`Нажата кнопка: ${event.key}`)
+// }) //ПОКАЗЫВАЕТ НА КАКУЮ КНОПКУ НАЖАЛ
 
 const wrapperBox = document.querySelector("#wrapperBox");
 const articleBox = document.querySelector("#articleBox");
@@ -310,14 +312,7 @@ for(let i = 0; i <= 7; i++) {
     }
 }//ПРИМЕНЕНИЕ appendChild И ВОЗВРАТА ССЫЛКИ НА СОЗДАННЫЙ li
 
-
-document.addEventListener("click", (event) => {
-    if(event.target.classList.contains("todo__item")) {
-        event.target.classList.add("isActive")
-    } else if(event.target.closest("todo__item")) {
-        event.target.classList.add("isActive")
-    }
-})
+//ДЕЛЕГИРОВАНИЕ
 
 const addItemListTodo = () => {
     const todoList = document.querySelector(".todo__list");
@@ -330,5 +325,35 @@ addItemListTodo()
 addItemListTodo()
 addItemListTodo()
 
-const linkPrevent = document.querySelector("#linkPrevent");
-linkPrevent.addEventListener("click", (e) => {})
+const todoListElement = document.querySelector(".todo__list")
+
+todoListElement.addEventListener("click", (event) => {
+    // if(event.target.classList.contains("todo__item")) {
+    //     event.target.classList.add("isActive")
+    // } else if(event.target.closest("todo__item")) {
+    //     event.target.classList.add("isActive")
+    // }
+
+    //или
+    if(event.target.tagName == "LI") {
+        event.target.classList.add("isActive")
+    }
+}) //обработчик вешается на весь документ и ищет по contains("todo__item") тот элемент по которому ткнуль курсором
+
+const createCerkl = () => {
+    const span = document.createElement("span");
+    span.style.width = 10 + "px";
+    span.style.height = 10 + "px";
+    span.style.backgroundColor = "red";
+    span.style.position = "absolute";
+    const clientX = document.documentElement.clientWidth / 2;
+    const clientY = document.documentElement.clientHeight / 2;
+    span.style.left = clientX + "px";
+    span.style.top = clientY + "px";
+    document.body.append(span);
+    console.log(span.getBoundingClientRect());
+    
+}
+createCerkl()
+
+
