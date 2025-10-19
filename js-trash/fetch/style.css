@@ -68,3 +68,47 @@
   border-color: black;
   background-color: aquamarine;
 }
+
+.mainMenu {
+  max-width: 300px;
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*row-gap: 15px;*/
+  background-color: gray;
+}
+
+.mainMenu li {
+  color: blue;
+  width: fit-content;
+  list-style-type: none;
+  cursor: pointer;
+  text-decoration: underline;
+
+}.mainMenu li:hover {
+  background-color: plum;
+}
+
+ .menu{
+   display: inline-block;
+   background-color: darkgray;
+ }
+
+ .btn__Menu {
+   color: black;
+   background-color: yellow;
+   border: none;
+   height: 30px;
+   cursor: pointer;
+ }
+
+ .menu__list {
+   /*display: flex;*/
+   /*flex-direction: column;*/
+   /*row-gap: 5px;*/
+   background-color: gray;
+   list-style-type: none;
+   display: none;
+ }
+.menuIsActive {
+   display: block;
+ }

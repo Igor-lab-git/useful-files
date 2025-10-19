@@ -340,6 +340,37 @@ todoListElement.addEventListener("click", (event) => {
     }
 }) //обработчик вешается на весь документ и ищет по contains("todo__item") тот элемент по которому ткнуль курсором
 
+//ДЕЛЕГИРОВАНИЕ ВЛОЖЕННОГО МЕНЮ
+//меню с методами в объекте и вызывающие делегированием в названии атрибутов
+const mainMenu = document.querySelector("#mainMenu");
+
+const menuActs = {
+    open() {alert("open menu....")},
+    save() {alert("save menu....")},
+    draw() {alert("draw menu....")},
+    customize() {alert("customize menu....")},
+}
+
+mainMenu.addEventListener("click", (event) => {
+    const li = event.target.closest("li");
+    if(li == null) return;
+
+    const act = li.dataset.command;
+    if(act && menuActs[act] !== undefined) {
+        menuActs[act]();
+    }
+})
+//скрыть меню и отобразить
+document.addEventListener("click", (event) => {
+    let id = event.target.dataset.toggleId;
+
+    if(!id) return ;
+    let elem = document.getElementById(id);
+    if(!elem) return;
+    elem.hidden = !elem.hidden;
+})
+
+// СОЗДАТЬ КРАСНУЮ ТОЧКУ НА ЭКРАНЕ ЗАФИКСИТЬ ЕЁ И ПРОГРАМНО ВЫСТОВИТЬ ЧЁТКО ПО СЕРЕДИНЕ КЛИЕНТ-ЭКРАНА
 const createCerkl = () => {
     const span = document.createElement("span");
     span.style.width = 10 + "px";
@@ -355,5 +386,24 @@ const createCerkl = () => {
     
 }
 createCerkl()
+
+
+const inputNewAdd = document.querySelector("#inputNewAdd");
+
+inputNewAdd.addEventListener("input", (event) => {
+    console.log(event.target.value);
+})
+
+const menu = document.querySelector(".menu");
+
+document.addEventListener("click", (event) => {
+    if(event.target.closest(".btn__Menu")) {
+        menu.classList.toggle("menuIsActive");
+    }
+    if(!event.target.closest(".menu")) {
+        menu.classList.remove("menuIsActive");
+    }
+})
+
 
 
