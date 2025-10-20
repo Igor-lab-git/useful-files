@@ -405,5 +405,21 @@ document.addEventListener("click", (event) => {
     }
 })
 
+const inputKeyAdd = document.querySelector("#inputKeyAdd");
+const errorMessage = document.querySelector("#errorMessage");
+const printTextToInput = document.querySelector("#printTextToInput");
+
+inputKeyAdd.addEventListener("change", (event) => {
+
+    const invalitText = inputKeyAdd.value.length < 5
+    printTextToInput.textContent = inputKeyAdd.value;
+
+    if(invalitText) {
+        inputKeyAdd.classList.toggle("isInvalud", invalitText) 
+        errorMessage.textContent = invalitText ? "Минимальный текст 5 символов" : "";
+    }
+
+})
+
 
 

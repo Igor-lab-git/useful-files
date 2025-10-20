@@ -112,3 +112,7 @@
 .menuIsActive {
    display: block;
  }
+
+ .isInvalud {
+  border: 2px solid red;
+ }
