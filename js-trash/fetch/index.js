@@ -421,5 +421,51 @@ inputKeyAdd.addEventListener("change", (event) => {
 
 })
 
+//СЛАЙДЕР
+
+const thumb = document.querySelector(".thumb");
+const slider = document.querySelector(".slider");
+
+// Убедись что слайдер имеет position: relative в CSS
+// и thumb имеет position: absolute
+
+thumb.onpointerdown = function(event) {
+    event.preventDefault(); // Предотвращаем выделение текста
+
+    // Получаем границы слайдера
+    const sliderRect = slider.getBoundingClientRect();
+
+    // Смещение курсора внутри thumb
+    const shiftX = event.clientX - thumb.getBoundingClientRect().left;
+
+    thumb.setPointerCapture(event.pointerId);
+
+    function onPointerMove(event) {
+        // Вычисляем новую позицию
+        let newLeft = event.clientX - shiftX - sliderRect.left;
+
+        // Ограничиваем границами слайдера
+        newLeft = Math.max(0, newLeft);
+        newLeft = Math.min(sliderRect.width - thumb.offsetWidth, newLeft);
+
+        thumb.style.left = newLeft + 'px';
+    }
+
+    function onPointerUp() {
+        // Убираем обработчики
+        thumb.onpointermove = null;
+        thumb.onpointerup = null;
+    }
+
+    // Назначаем обработчики
+    thumb.onpointermove = onPointerMove;
+    thumb.onpointerup = onPointerUp;
+};
+
+const textareaElement = document.querySelector("#textareaElement");
+
+textareaElement.addEventListener("input", (event) => {
+    console.log(event.target.value);
+});
 
 
