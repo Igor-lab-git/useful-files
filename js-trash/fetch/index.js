@@ -463,9 +463,55 @@ thumb.onpointerdown = function(event) {
 };
 
 const textareaElement = document.querySelector("#textareaElement");
+const textareaOutText = document.querySelector("#textareaOutText");
 
 textareaElement.addEventListener("input", (event) => {
-    console.log(event.target.value);
+    const textOut = event.target.value;
+    textareaOutText.textContent = textOut;
 });
 
+//КОЛЛЕКЦИЯ ФОРМ И ИЗМЕНЕНИЕ CHANGE
+const formInputOutText = document.querySelector("#formInputOutText");
+const frm = document.forms[1];
 
+frm.user.addEventListener("change", (e) => {
+    console.log(e.target.value);
+})
+frm.user.addEventListener("cut", (e) => {
+    console.log(e.target.value);
+})
+frm.user.addEventListener("copy", (e) => {
+    console.log(e.target.value);
+})
+frm.user.addEventListener("paste", (e) => {
+    console.log(e.target.value);
+})
+frm.user.addEventListener("input", (e) => {
+    formInputOutText.textContent = e.target.value;
+})
+console.log(frm.sex);
+
+
+
+frm.sex[0].addEventListener("change", (e) => {
+    console.log("sex[0]", e.target.checked);
+})
+frm.sex[1].addEventListener("change", (e) => {
+    console.log("sex[1]", e.target.checked);
+})
+frm.agree.addEventListener("change", (e) => {
+    console.log("sex.agree", e.target.checked);
+})
+frm.city.addEventListener("change", (e) => {
+    console.log("Выбран город № ", e.target.selectedIndex);
+})
+frm.city.options[2].selected = true;
+
+frm.addEventListener("submit", (e) => {
+    e.preventDefault()
+    if(!frm.user.value) {
+        alert("Форма не заполнена")
+    } else {
+        alert("send form");
+    }
+})
