@@ -7,17 +7,23 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="./styles.css">
   <script src="./script.js" defer></script>
+  <script src="./validation.js" defer></script>
   <title>Сбор данных с формы — класс FormData</title>
 </head>
 <body>
-  <form id="regForm" action="/registration" method="post">
+  <form id="regForm" action="/registration" method="post" novalidate data-js-form>
     <p class="field">
       <label class="field__label" for="login">Логин</label>
       <input
         class="field__control"
         id="login"
         name="login"
+        required
+        minlength="3"
+        maxlength="12"
+        aria-errormessage="login-errors"
       />
+      <span class="field__errors" id="login-errors" data-js-form-field__errors></span>
     </p>
     <p class="field">
       <label class="field__label" for="password">Пароль</label>
@@ -26,12 +32,22 @@
         id="password"
         name="password"
         type="password"
+        required
+        minlength="8"
+        maxlength="16"
+        aria-errormessage="password-errors"
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,16}$"
+        title="Пароль должен содержать не менее 8 и максимум 16 символов, один символ заглавной буквы и один символ в нижнем регистре"
       />
+      <span class="field__errors" id="password-errors" data-js-form-field-errors></span>
     </p>
+
     <p class="field">
       <label class="field__label" for="about">О себе</label>
-      <textarea class="field__control" id="about" name="about"></textarea>
+      <textarea class="field__control" id="about" name="about" aria-errormessage="about-errors"></textarea>
+      <span class="field__errors" id="about-errors" data-js-form-field-errors></span>
     </p>
+
     <fieldset class="radios">
       <legend class="radios__legend">Ваш пол</legend>
 
@@ -41,6 +57,7 @@
         name="gender"
         type="radio"
         value="Мужской"
+        required
       />
       <label class="radios__label" for="male">Мужской</label>
 
@@ -50,17 +67,22 @@
         name="gender"
         type="radio"
         value="Женский"
+        required
       />
       <label class="radios__label" for="female">Женский</label>
     </fieldset>
+
     <div class="field checkbox">
       <input
         class="checkbox__control"
         id="agreement"
         name="agreement"
         type="checkbox"
+        required
+        aria-errormessage="agreement-errors"
       />
       <label class="field__label checkbox__label" for="agreement">Согласен на всё</label>
+      <span class="field__errors" id="agreement-errors" data-js-form-field-errors></span>
     </div>
     <button type="submit">Регистрация</button>
   </form>
