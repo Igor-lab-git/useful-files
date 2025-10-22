@@ -19,3 +19,6 @@ const user = [ ['username', 'John'], ['email', 'john@example.com'], ['age', '25'
 console.log(Object.fromEntries(user));
 })
 
+
+let start = Date.now();
+console.log(start);
