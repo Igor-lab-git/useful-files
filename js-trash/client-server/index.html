@@ -9,6 +9,33 @@
 </head>
 <body>
     <div class="box" id="box"></div>
-    <button id="buttonToggle">Toggle</button>
+    <form class="load-todo-post" action="#">
+        <h2>Поиск поста по ID</h2>
+        <label for="post-id">Индетефекатор поста:</label>
+        <input id="post-id" type="number" value="1"></input>
+        <button type="submit">загрузить информацию с сервера</button>
+    </form>
+
+    <form action="#" class="create-post-form">
+        <h2>Создать пост</h2>
+        <p>
+            <label for="new-post-title">Заголовок поста:</label>
+            <input id="new-post-title" type="text" name="title">
+        </p> <p>
+            <label for="new-post-id">ID поста:</label>
+            <input id="new-post-id" type="number" name="id">
+        </p>
+        <input type="submit" value="Сохранить пост на сервере">
+    </form>
+
+    <form action="#" class="search-form-post">
+        <h2>Поиск постов</h2>
+        <p>
+            <label for="post-views">Минимум просмотров:</label>
+            <input id="post-views" type="number" value="0">
+        </p>
+        <input type="submit" value="Найти пост">
+    </form>
+<div class="result"></div>
 </body>
 </html>
