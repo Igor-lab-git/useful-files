@@ -1,23 +1,16 @@
-document.addEventListener("DOMContentLoaded", function() {
 
 const formElement = document.querySelector("form");
 
 formElement.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const formData = new FormData(formElement);
+  const formData = new FormData(event.currentTarget); // или new FormData(event.target) or new FormData(event.currentTarget);
 
-  formData.append("example", "bla-bla-bla");
-
-  console.log(Object.fromEntries(formData));
-
-
+  const result = Object.fromEntries(formData);
+  console.log(result);
 });
 
-const user = [ ['username', 'John'], ['email', 'john@example.com'], ['age', '25'] ]
 
-console.log(Object.fromEntries(user));
-})
 
 
 let start = Date.now();
