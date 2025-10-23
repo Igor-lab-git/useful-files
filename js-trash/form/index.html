@@ -23,7 +23,7 @@
         maxlength="12"
         aria-errormessage="login-errors"
       />
-      <span class="field__errors" id="login-errors" data-js-form-field__errors></span>
+      <span class="field__errors" id="login-errors" data-js-form-field-errors></span>
     </p>
     <p class="field">
       <label class="field__label" for="password">Пароль</label>
@@ -58,6 +58,7 @@
         type="radio"
         value="Мужской"
         required
+        aria-errormessage="gender-errors"
       />
       <label class="radios__label" for="male">Мужской</label>
 
@@ -68,8 +69,11 @@
         type="radio"
         value="Женский"
         required
+        aria-errormessage="gender-errors"
       />
       <label class="radios__label" for="female">Женский</label>
+
+      <span class="field__errors" id="gender-errors" data-js-form-field-errors></span>
     </fieldset>
 
     <div class="field checkbox">

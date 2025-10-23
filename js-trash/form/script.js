@@ -2,7 +2,7 @@
 const formElement = document.querySelector("form");
 
 formElement.addEventListener("submit", (event) => {
-  event.preventDefault();
+  // event.preventDefault();
 
   const formData = new FormData(event.currentTarget); // или new FormData(event.target) or new FormData(event.currentTarget);
 
@@ -13,5 +13,3 @@ formElement.addEventListener("submit", (event) => {
 
 
 
-let start = Date.now();
-console.log(start);
