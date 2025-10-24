@@ -1,0 +1,18 @@
+:root {
+  --color-dark: #000;
+  --color-light: #fff;
+
+  --text-color: var(--color-dark);
+  --color-bg: var(--color-light);
+}
+
+html.is-dark-theme {
+  --text-color: var(--color-light);
+  --color-bg: var(--color-dark);
+}
+
+body {
+  padding: 1em;
+  color: var(--text-color);
+  background-color: var(--color-bg);
+}
